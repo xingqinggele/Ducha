@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8">
+
+    <RelativeLayout
+        android:background="#1E387F"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:layout_marginLeft="13dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/home_icon1"
+            android:layout_width="17dp"
+            android:layout_height="23dp" />
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重点人员详情"
+            android:textColor="#ffffffff"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/home_rela_bg1"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="#D11919"
+            android:layout_width="133dp"
+            android:layout_height="20dp">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_marginLeft="14dp"
+                android:src="@mipmap/details_icon1"
+                android:layout_width="13dp"
+                android:layout_height="11dp" />
+
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="案件存在问题的原因"
+                android:textColor="#ffffffff"
+                android:textSize="10sp"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginBottom="15dp"
+            android:lineSpacingExtra="5dp"
+            android:layout_marginTop="15dp"
+            android:textSize="10sp"
+            android:layout_marginRight="18dp"
+            android:layout_marginLeft="15dp"
+            android:text="此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

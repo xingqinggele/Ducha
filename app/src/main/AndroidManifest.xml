@@ -22,6 +22,8 @@
             android:configChanges="screenSize|keyboardHidden|orientation"/>
         <!--重点人员-->
         <activity android:name=".activity.KeypersonnelActivity"/>
+        <!--重点详情-->
+        <activity android:name=".activity.KeypersonnelActivityDetalis"/>
     </application>
 
 </manifest>

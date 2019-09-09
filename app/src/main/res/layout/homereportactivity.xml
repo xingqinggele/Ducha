@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <RelativeLayout
         android:background="#1E387F"
@@ -28,5 +29,18 @@
 
     </RelativeLayout>
 
+
+    <TextView
+        android:textColor="#ff1f1f1f"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="死亡重点人统计"
+        android:background="@drawable/baobiao_txt_bg"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
 
 </LinearLayout>

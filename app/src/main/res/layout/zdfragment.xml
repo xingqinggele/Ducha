@@ -65,7 +65,7 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="撤管未撤管"
+            android:text="应当撤管未撤管"
             android:textColor="#ff1f1f1f"
             android:textSize="17sp"
             />
@@ -141,7 +141,7 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="重点关注人员失控"
+            android:text="重点关注人员失控离开本地"
             android:textColor="#ff1f1f1f"
             android:textSize="17sp"
             />
@@ -179,7 +179,7 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="重点人信息录入不全"
+            android:text="未按照规定录入稳控考察记录"
             android:textColor="#ff1f1f1f"
             android:textSize="17sp"
             />

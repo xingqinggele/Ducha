@@ -47,10 +47,12 @@
            android:scaleType="fitXY"/>
 
        <View
+           android:visibility="gone"
            android:layout_marginBottom="22dp"
            android:layout_marginTop="18dp"
            android:layout_width="match_parent"
            android:layout_height="60dp"/>
+
 
     </LinearLayout>
 

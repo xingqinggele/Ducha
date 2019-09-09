@@ -2,16 +2,75 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:a_zhon="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity"
+    android:orientation="vertical"
+    android:background="#F7F7F9">
 
    <RelativeLayout
+       android:background="#1E387F"
        android:layout_width="match_parent"
        android:layout_height="40dp">
 
+      <ImageView
+          android:layout_marginLeft="13dp"
+          android:layout_centerVertical="true"
+          android:src="@mipmap/home_icon1"
+          android:layout_width="17dp"
+          android:layout_height="23dp" />
+
+      <TextView
+          android:layout_centerHorizontal="true"
+          android:layout_centerVertical="true"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="督察"
+          android:textColor="#ffffffff"
+          android:textSize="20sp"
+          />
 
    </RelativeLayout>
+ <FrameLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+       <ImageView
+           android:src="@mipmap/home_banner_icon1"
+           android:layout_width="match_parent"
+           android:layout_height="200dp"
+           android:scaleType="fitXY"/>
+
+       <View
+           android:layout_marginBottom="22dp"
+           android:layout_marginTop="18dp"
+           android:layout_width="match_parent"
+           android:layout_height="60dp"/>
+
+    </LinearLayout>
+
+    <com.zhhl.ducha.xuanfu.DragFloatActionButton
+           android:layout_width="wrap_content"
+           android:layout_gravity="right|bottom"
+           android:id="@+id/floatbutton"
+           app:elevation="6dp"
+           android:clickable="true"
+           app:borderWidth="0dp"
+           app:rippleColor="#0097a7"
+           app:backgroundTint="#164186"
+           android:layout_marginBottom="20dp"
+           android:src="@mipmap/home_icon8"
+           app:pressedTranslationZ="12dp"
+           android:layout_height="wrap_content"
+           android:scaleType="center"
+           />
+
+    </FrameLayout>
+
 
 </LinearLayout>

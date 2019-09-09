@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/home_rela_bg1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <ImageView
+            android:id="@+id/home_img1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/home_icon2"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/home_img1"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="应当列管未列管"
+            android:textColor="#ff1f1f1f"
+            android:textSize="17sp"
+            />
+
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="17dp"
+            android:layout_height="23dp"
+            android:src="@mipmap/home_icon3"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/home_rela_bg1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <ImageView
+            android:id="@+id/home_img2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/home_icon4"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/home_img2"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="撤管未撤管"
+            android:textColor="#ff1f1f1f"
+            android:textSize="17sp"
+            />
+
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="17dp"
+            android:layout_height="23dp"
+            android:src="@mipmap/home_icon3"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/home_rela_bg1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <ImageView
+            android:id="@+id/home_img3"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/home_icon5"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/home_img3"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="羁押期间或已死亡仍有列管记录"
+            android:textColor="#ff1f1f1f"
+            android:textSize="17sp"
+            />
+
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="17dp"
+            android:layout_height="23dp"
+            android:src="@mipmap/home_icon3"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/home_rela_bg1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <ImageView
+            android:id="@+id/home_img4"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/home_icon6"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/home_img4"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重点关注人员失控"
+            android:textColor="#ff1f1f1f"
+            android:textSize="17sp"
+            />
+
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="17dp"
+            android:layout_height="23dp"
+            android:src="@mipmap/home_icon3"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/home_rela_bg1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <ImageView
+            android:id="@+id/home_img5"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/home_icon7"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/home_img5"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重点人信息录入不全"
+            android:textColor="#ff1f1f1f"
+            android:textSize="17sp"
+            />
+
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="17dp"
+            android:layout_height="23dp"
+            android:src="@mipmap/home_icon3"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

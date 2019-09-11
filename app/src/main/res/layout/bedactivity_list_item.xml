@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/one_case_acti_list_item_liner_bg"
+        android:orientation="horizontal">
+
+        <!--红点-->
+        <View
+            android:id="@+id/point"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/keyper_background_oval_1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <!--姓名-->
+            <TextView
+                android:id="@+id/bedt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="案件名称："
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bed_sex"
+                android:text="相志龙等人与徐子钦打架斗殴被刑事拘留"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp" />
+
+            <!--身份证号-->
+            <TextView
+                android:id="@+id/bedt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt1"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="6dp"
+                android:text="身份证号："
+                android:textSize="13sp" />
+
+
+            <TextView
+                android:id="@+id/idnumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt1"
+                android:layout_alignLeft="@+id/bed_sex"
+                android:layout_marginTop="6dp"
+                android:text="20190608001"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp" />
+
+            <!--重点录入居住地-->
+            <TextView
+                android:id="@+id/bedt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt2"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="6dp"
+                android:text="涉案人员姓名："
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/zd_residence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt2"
+                android:layout_alignLeft="@+id/bed_sex"
+                android:layout_marginTop="6dp"
+                android:text="相志龙"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp" />
+            <!--居住证办理居住地-->
+            <TextView
+                android:id="@+id/bedt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt3"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="6dp"
+                android:text="涉案人员性别："
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/bed_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt3"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@+id/bedt4"
+                android:text="男"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp" />
+            <!--管理派出所-->
+            <TextView
+                android:id="@+id/bedt5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt4"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="6dp"
+                android:text="涉案人员地址："
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/bed_adress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt4"
+                android:layout_alignLeft="@+id/bed_sex"
+                android:layout_marginTop="6dp"
+                android:text="吉林省长春市二道区1200号"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bedt5"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="11dp"
+                android:background="@drawable/ketper_background_frame_solid_1"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp"
+                android:text="审批"
+                android:textColor="#FFFFFF" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

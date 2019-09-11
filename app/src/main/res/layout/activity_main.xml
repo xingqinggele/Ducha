@@ -46,13 +46,29 @@
            android:layout_height="200dp"
            android:scaleType="fitXY"/>
 
-       <View
-           android:visibility="gone"
-           android:layout_marginBottom="22dp"
-           android:layout_marginTop="18dp"
-           android:layout_width="match_parent"
-           android:layout_height="60dp"/>
+        <com.flyco.tablayout.SlidingTabLayout
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="22dp"
+            android:id="@+id/tab_layout_qgl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:tl_indicator_color="@color/main_color"
+            app:tl_indicator_corner_radius="1.5dp"
+            app:tl_indicator_height="2dp"
+            app:tl_indicator_width="120dp"
+            app:tl_tab_space_equal="true"
+            app:tl_textSelectColor="@color/main_color"
+            app:tl_textUnselectColor="#333333"
+            app:tl_textsize="16sp" />
 
+       <androidx.viewpager.widget.ViewPager
+           android:id="@+id/view_pager"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent" />
 
     </LinearLayout>
 

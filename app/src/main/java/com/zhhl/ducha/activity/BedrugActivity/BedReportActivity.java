@@ -1,21 +1,21 @@
-package com.zhhl.ducha.activity;
+package com.zhhl.ducha.activity.BedrugActivity;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
 import com.zhhl.ducha.R;
+import com.zhhl.ducha.activity.BaseActivity;
 
 /**
- * Created by qgl on 2019/9/9 16:19.
+ * Created by qgl on 2019/9/11 14:32.
  */
-public class KeypersonnelActivity extends BaseActivity
+public class BedReportActivity extends BaseActivity
 {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.keypersonnelactivity);
-
+        setContentView(R.layout.bedreportactivity);
     }
 }

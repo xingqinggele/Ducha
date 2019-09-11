@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="horizontal"
+        android:background="@drawable/one_case_acti_list_item_liner_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--红点-->
+        <View
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/point"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/keyper_background_oval_1"
+            />
+        <RelativeLayout
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--姓名-->
+            <TextView
+                android:textSize="13sp"
+                android:id="@+id/t1"
+                android:layout_marginLeft="4dp"
+                android:text="姓名："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_alignLeft="@+id/jz_residence"
+                android:id="@+id/name"
+                android:textSize="13sp"
+                android:textColor="#1F1F1F"
+                android:text="前三一"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--身份证号-->
+            <TextView
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/t1"
+                android:textSize="13sp"
+                android:id="@+id/t2"
+                android:layout_marginLeft="4dp"
+                android:text="身份证号："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_alignLeft="@+id/jz_residence"
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/t1"
+                android:id="@+id/idnumber"
+                android:textSize="13sp"
+                android:textColor="#1F1F1F"
+                android:text="220722198810100101"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--重点录入居住地-->
+            <TextView
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/t2"
+                android:textSize="13sp"
+                android:id="@+id/t3"
+                android:layout_marginLeft="4dp"
+                android:text="重点录入居住地："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_alignLeft="@+id/jz_residence"
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/t2"
+                android:id="@+id/zd_residence"
+                android:textSize="13sp"
+                android:textColor="#1F1F1F"
+                android:text="吉林省长春市二道区万科蓝山22栋6门608室"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--居住证办理居住地-->
+            <TextView
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/t3"
+                android:textSize="13sp"
+                android:id="@+id/t4"
+                android:layout_marginLeft="4dp"
+                android:text="居住证办理居住地："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/t3"
+                android:id="@+id/jz_residence"
+                android:textSize="13sp"
+                android:textColor="#1F1F1F"
+                android:layout_toRightOf="@+id/t4"
+                android:text="吉林省长春市南关区园东小区4栋2门405室"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <!--管理派出所-->
+            <TextView
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/t4"
+                android:textSize="13sp"
+                android:id="@+id/t5"
+                android:layout_marginLeft="4dp"
+                android:text="管理派出所："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_alignLeft="@+id/jz_residence"
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/t4"
+                android:id="@+id/police_station"
+                android:textSize="13sp"
+                android:textColor="#1F1F1F"
+                android:text="长春市南关区派出所"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginRight="11dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="11dp"
+                android:layout_below="@+id/t5"
+                android:layout_alignParentRight="true"
+                android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="审批"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/ketper_background_frame_solid_1"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+
+                />
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

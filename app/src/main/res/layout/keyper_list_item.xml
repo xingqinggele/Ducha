@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:layout_alignLeft="@+id/jz_residence"
+                android:layout_alignLeft="@+id/idnumber"
                 android:id="@+id/name"
                 android:textSize="13sp"
                 android:textColor="#1F1F1F"
@@ -63,7 +63,8 @@
 
 
             <TextView
-                android:layout_alignLeft="@+id/jz_residence"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/t2"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/t1"
                 android:id="@+id/idnumber"
@@ -75,6 +76,7 @@
 
             <!--重点录入居住地-->
             <TextView
+                android:visibility="gone"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/t2"
                 android:textSize="13sp"
@@ -85,6 +87,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:visibility="gone"
                 android:layout_alignLeft="@+id/jz_residence"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/t2"
@@ -96,6 +99,7 @@
                 android:layout_height="wrap_content" />
             <!--居住证办理居住地-->
             <TextView
+                android:visibility="gone"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/t3"
                 android:textSize="13sp"
@@ -106,6 +110,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:visibility="gone"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/t3"
@@ -118,6 +123,7 @@
                 android:layout_height="wrap_content" />
             <!--管理派出所-->
             <TextView
+                android:visibility="gone"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/t4"
                 android:textSize="13sp"
@@ -128,6 +134,7 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:visibility="gone"
                 android:layout_alignLeft="@+id/jz_residence"
                 android:layout_marginTop="6dp"
                 android:layout_below="@+id/t4"
@@ -147,7 +154,7 @@
                 android:id="@+id/state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="审批"
+                android:text="反馈"
                 android:textColor="#FFFFFF"
                 android:background="@drawable/ketper_background_frame_solid_1"
                 android:paddingRight="20dp"
@@ -156,7 +163,6 @@
                 android:paddingBottom="5dp"
 
                 />
-
 
         </RelativeLayout>
 

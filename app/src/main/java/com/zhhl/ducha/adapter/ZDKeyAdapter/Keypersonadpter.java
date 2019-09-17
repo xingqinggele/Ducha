@@ -1,4 +1,4 @@
-package com.zhhl.ducha.adapter;
+package com.zhhl.ducha.adapter.ZDKeyAdapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.zhhl.ducha.R;
 import com.zhhl.ducha.activity.ZDActivity.KeypersonnelActivityDetalis;
 import com.zhhl.ducha.bean.Detabean;
+import com.zhhl.ducha.bean.Homebean;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +21,10 @@ import java.util.List;
 public class Keypersonadpter extends RecyclerView.Adapter<Keypersonadpter.ViewHolder>
 {
     private Context mContext;
-    private List<Detabean> dataList = new ArrayList<>();
+    private List<Homebean.AttributesBean.VarListBean> dataList = new ArrayList<>();
 
 
-    public void addAllData(List<Detabean> dataList) {
+    public void addAllData(List<Homebean.AttributesBean.VarListBean> dataList) {
         this.dataList.addAll(dataList);
         notifyDataSetChanged();
     }
@@ -36,19 +38,16 @@ public class Keypersonadpter extends RecyclerView.Adapter<Keypersonadpter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView one_case_acti_list_context;
-        public TextView one_case_acti_list_number;
-        public TextView one_case_acti_list_name;
-        public TextView one_case_acti_list_addres;
-        public TextView one_case_acti_list_time;
+        public TextView key_name;
+        public TextView key_idnumber;
+        public TextView key_state;
         public ViewHolder(View itemView)
         {
             super(itemView);
-//            one_case_acti_list_context = (TextView) itemView.findViewById(R.id.one_case_acti_list_context);
-//            one_case_acti_list_number= (TextView) itemView.findViewById(R.id.one_case_acti_list_number);
-//            one_case_acti_list_name = (TextView) itemView.findViewById(R.id.one_case_acti_list_name);
-//            one_case_acti_list_addres= (TextView) itemView.findViewById(R.id.one_case_acti_list_addres);
-//            one_case_acti_list_time= (TextView) itemView.findViewById(R.id.one_case_acti_list_time);
+            key_name = (TextView) itemView.findViewById(R.id.name);
+            key_idnumber= (TextView) itemView.findViewById(R.id.idnumber);
+            key_state= (TextView) itemView.findViewById(R.id.state);
+
         }
     }
 
@@ -60,17 +59,25 @@ public class Keypersonadpter extends RecyclerView.Adapter<Keypersonadpter.ViewHo
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-//        holder.title.setText(dataList.get(position).getNoticeTitle());
-//        holder.tv_content.setText(dataList.get(position).getNoticeContent());
-//        holder.tv_time.setText(dataList.get(position).getCreateTime());
-//        holder.tv_author.setText("发布人："+dataList.get(position).getCreateBy());
+        holder.key_name.setText(dataList.get(position).getXM());
+        holder.key_idnumber.setText(dataList.get(position).getGMSFHM());
+
+        holder.key_state.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+            }
+        });
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
 
                 Intent intent=new Intent(mContext, KeypersonnelActivityDetalis.class);
-                //intent.putExtra("noticeId",dataList.get(position).getId());
+                intent.putExtra("Idcard",dataList.get(position).getGMSFHM());
                 mContext.startActivity(intent);
             }
         });

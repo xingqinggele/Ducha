@@ -3,19 +3,26 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8F8">
-
+    android:background="#F8F8F8"
+    android:descendantFocusability="blocksDescendants">
     <RelativeLayout
         android:background="#1E387F"
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
-        <ImageView
-            android:layout_marginLeft="13dp"
+        <RelativeLayout
+            android:id="@+id/back"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/home_icon1"
-            android:layout_width="17dp"
-            android:layout_height="23dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@mipmap/home_icon1"
+                android:layout_width="17dp"
+                android:layout_height="23dp" />
+
+        </RelativeLayout>
 
         <TextView
             android:layout_centerHorizontal="true"
@@ -28,294 +35,300 @@
             />
 
     </RelativeLayout>
-
-    <LinearLayout
-        android:background="@drawable/home_rela_bg1"
-        android:layout_marginTop="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        
-        <LinearLayout
-
-            android:orientation="horizontal"
-            android:background="#D11919"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp">
-
-            <ImageView
-
-                android:layout_marginLeft="14dp"
-                android:src="@mipmap/details_icon1"
-                android:layout_width="20dp"
-                android:layout_height="18dp" />
-
-            <TextView
-                android:layout_marginRight="14dp"
-                android:layout_marginLeft="3dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="案件存在问题的原因"
-                android:textColor="#ffffffff"
-                android:textSize="15sp"
-                />
-
-        </LinearLayout>
-        <TextView
-            android:layout_marginBottom="15dp"
-            android:lineSpacingExtra="5dp"
-            android:layout_marginTop="15dp"
-            android:textSize="13sp"
-            android:layout_marginRight="18dp"
-            android:layout_marginLeft="15dp"
-            android:text="此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
-
-    </LinearLayout>
-    <!--<LinearLayout-->
-        <!--android:background="@drawable/home_rela_bg1"-->
-        <!--android:layout_marginTop="13dp"-->
-        <!--android:layout_marginRight="13dp"-->
-        <!--android:layout_marginLeft="13dp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical">-->
-
-        <!--<LinearLayout-->
-            <!--android:orientation="horizontal"-->
-            <!--android:background="#18D3A9"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="20dp">-->
-
-            <!--<ImageView-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_marginLeft="14dp"-->
-                <!--android:src="@mipmap/details_icon2"-->
-                <!--android:layout_width="20dp"-->
-                <!--android:layout_height="18dp" />-->
-
-            <!--<TextView-->
-                <!--android:layout_marginRight="14dp"-->
-                <!--android:layout_marginLeft="3dp"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="基本信息"-->
-                <!--android:textColor="#ffffffff"-->
-                <!--android:textSize="15sp"-->
-                <!--/>-->
-
-
-
-        <!--</LinearLayout>-->
-
-        <!--<RelativeLayout-->
-            <!--android:layout_marginLeft="15dp"-->
-            <!--android:layout_marginBottom="15dp"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
-            <!--&lt;!&ndash;姓名&ndash;&gt;-->
-            <!--<TextView-->
-                <!--android:id="@+id/de_t1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="姓名："-->
-                <!--android:textColor="#ff666666"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/detalis_name"-->
-                <!--android:layout_marginLeft="5dp"-->
-                <!--android:layout_toRightOf="@+id/de_t1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="钱三一"-->
-                <!--android:textColor="#1F1F1F"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/tt3"-->
-                <!--android:layout_alignLeft="@+id/tt1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="姓名拼音："-->
-                <!--android:textColor="#ff666666"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-            <!--<TextView-->
-                <!--android:layout_marginLeft="5dp"-->
-                <!--android:layout_toRightOf="@+id/tt3"-->
-                <!--android:id="@+id/detalis_pname"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="qiansanyi"-->
-                <!--android:textColor="#1F1F1F"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-
-            <!--<View-->
-                <!--android:layout_marginBottom="10dp"-->
-                <!--android:id="@+id/view1"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:layout_below="@+id/de_t1"-->
-                <!--android:background="#D1D1D1"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
-            <!--&lt;!&ndash;民族&ndash;&gt;-->
-            <!--<TextView-->
-                <!--android:layout_below="@+id/view1"-->
-                <!--android:id="@+id/de_t2"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="民族："-->
-                <!--android:textColor="#ff666666"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-
-            <!--<TextView-->
-                <!--android:layout_below="@+id/view1"-->
-                <!--android:id="@+id/detalis_nation"-->
-                <!--android:layout_marginLeft="5dp"-->
-                <!--android:layout_toRightOf="@+id/de_t2"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="汉"-->
-                <!--android:textColor="#1F1F1F"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/tt2"-->
-                <!--android:layout_alignLeft="@+id/tt1"-->
-                <!--android:layout_below="@+id/view1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="性别："-->
-                <!--android:textColor="#ff666666"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-            <!--<TextView-->
-                <!--android:layout_marginLeft="5dp"-->
-                <!--android:layout_toRightOf="@+id/tt2"-->
-                <!--android:layout_below="@+id/view1"-->
-                <!--android:id="@+id/detalis_sex"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="男"-->
-                <!--android:textColor="#1F1F1F"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-
-            <!--<View-->
-                <!--android:layout_marginBottom="10dp"-->
-                <!--android:id="@+id/view2"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:layout_below="@+id/de_t2"-->
-                <!--android:background="#D1D1D1"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
-
-            <!--&lt;!&ndash;出生日期&ndash;&gt;-->
-            <!--<TextView-->
-                <!--android:layout_below="@+id/view2"-->
-                <!--android:id="@+id/de_t3"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="出生日期："-->
-                <!--android:textColor="#ff666666"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-            <!--<TextView-->
-                <!--android:layout_below="@+id/view2"-->
-                <!--android:id="@+id/detalis_dateof_birth"-->
-                <!--android:layout_marginLeft="5dp"-->
-                <!--android:layout_toRightOf="@+id/de_t3"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="1992-02-27"-->
-                <!--android:textColor="#1F1F1F"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-            <!--<TextView-->
-                <!--android:id="@+id/tt1"-->
-                <!--android:layout_below="@+id/view2"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:layout_toLeftOf="@+id/detalis_phone"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="联系电话："-->
-                <!--android:textColor="#ff666666"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-            <!--<TextView-->
-                <!--android:layout_marginRight="19dp"-->
-                <!--android:layout_below="@+id/view2"-->
-                <!--android:id="@+id/detalis_phone"-->
-                <!--android:layout_alignParentRight="true"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="18843090099"-->
-                <!--android:textColor="#1F1F1F"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-
-            <!--<View-->
-                <!--android:layout_marginBottom="10dp"-->
-                <!--android:id="@+id/view3"-->
-                <!--android:layout_marginRight="5dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:layout_below="@+id/de_t3"-->
-                <!--android:background="#D1D1D1"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="0.5dp"/>-->
-
-            <!--&lt;!&ndash;身份证号&ndash;&gt;-->
-            <!--<TextView-->
-                <!--android:layout_below="@+id/view3"-->
-                <!--android:id="@+id/de_t4"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="身份证号："-->
-                <!--android:textColor="#ff666666"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-            <!--<TextView-->
-                <!--android:layout_below="@+id/view3"-->
-                <!--android:id="@+id/detalis_id_number"-->
-                <!--android:layout_marginLeft="5dp"-->
-                <!--android:layout_toRightOf="@+id/de_t4"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="220722199812091234"-->
-                <!--android:textColor="#1F1F1F"-->
-                <!--android:textSize="13sp"-->
-                <!--/>-->
-
-        <!--</RelativeLayout>-->
-
-
-    <!--</LinearLayout>-->
-
-    <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
-        android:id="@+id/listview"
-        android:layout_marginTop="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        android:id="@+id/swipe_refresh_layout">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:background="@drawable/home_rela_bg1"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+
+                        android:orientation="horizontal"
+                        android:background="#D11919"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp">
+
+                        <ImageView
+
+                            android:layout_marginLeft="14dp"
+                            android:src="@mipmap/details_icon1"
+                            android:layout_width="20dp"
+                            android:layout_height="18dp" />
+
+                        <TextView
+                            android:layout_marginRight="14dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="案件存在问题的原因"
+                            android:textColor="#ffffffff"
+                            android:textSize="15sp"
+                            />
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_marginBottom="15dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="13sp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。此人案件中缺少法律文书，没有《拘留通知书》、《拘留证》、《家属通知书》、《行政处罚通知书》等其中之一。"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
 
-    </com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/home_rela_bg1"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:background="#18D3A9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp">
+
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="14dp"
+                            android:src="@mipmap/details_icon2"
+                            android:layout_width="20dp"
+                            android:layout_height="18dp" />
+
+                        <TextView
+                            android:layout_marginRight="14dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_gravity="center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="基本信息"
+                            android:textColor="#ffffffff"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                    <RelativeLayout
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <!--姓名-->
+                        <TextView
+                            android:id="@+id/de_t1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="姓名："
+                            android:textColor="#ff666666"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/detalis_name"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/de_t1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="钱三一"
+                            android:textColor="#1F1F1F"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tt3"
+                            android:layout_alignLeft="@+id/tt1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="姓名拼音："
+                            android:textColor="#ff666666"
+                            android:textSize="13sp"
+                            />
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/tt3"
+                            android:id="@+id/detalis_pname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="qiansanyi"
+                            android:textColor="#1F1F1F"
+                            android:textSize="13sp"
+                            />
+
+                        <View
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/view1"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/de_t1"
+                            android:background="#D1D1D1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"/>
+                        <!--民族-->
+                        <TextView
+                            android:layout_below="@+id/view1"
+                            android:id="@+id/de_t2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="民族："
+                            android:textColor="#ff666666"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:layout_below="@+id/view1"
+                            android:id="@+id/detalis_nation"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/de_t2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="汉"
+                            android:textColor="#1F1F1F"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tt2"
+                            android:layout_alignLeft="@+id/tt1"
+                            android:layout_below="@+id/view1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="性别："
+                            android:textColor="#ff666666"
+                            android:textSize="13sp"
+                            />
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/tt2"
+                            android:layout_below="@+id/view1"
+                            android:id="@+id/detalis_sex"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="男"
+                            android:textColor="#1F1F1F"
+                            android:textSize="13sp"
+                            />
+
+                        <View
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/view2"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/de_t2"
+                            android:background="#D1D1D1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"/>
+
+                        <!--出生日期-->
+                        <TextView
+                            android:layout_below="@+id/view2"
+                            android:id="@+id/de_t3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="出生日期："
+                            android:textColor="#ff666666"
+                            android:textSize="13sp"
+                            />
+                        <TextView
+                            android:layout_below="@+id/view2"
+                            android:id="@+id/detalis_dateof_birth"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/de_t3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1992-02-27"
+                            android:textColor="#1F1F1F"
+                            android:textSize="13sp"
+                            />
+                        <TextView
+                            android:id="@+id/tt1"
+                            android:layout_below="@+id/view2"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@+id/detalis_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="联系电话："
+                            android:textColor="#ff666666"
+                            android:textSize="13sp"
+                            />
+                        <TextView
+                            android:layout_marginRight="19dp"
+                            android:layout_below="@+id/view2"
+                            android:id="@+id/detalis_phone"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="18843090099"
+                            android:textColor="#1F1F1F"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/view3"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/de_t3"
+                            android:background="#D1D1D1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"/>
+
+                        <!--身份证号-->
+                        <TextView
+                            android:layout_below="@+id/view3"
+                            android:id="@+id/de_t4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="身份证号："
+                            android:textColor="#ff666666"
+                            android:textSize="13sp"
+                            />
+                        <TextView
+                            android:layout_below="@+id/view3"
+                            android:id="@+id/detalis_id_number"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/de_t4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="220722199812091234"
+                            android:textColor="#1F1F1F"
+                            android:textSize="13sp"/>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <com.zhhl.ducha.view.NoScrollListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                </com.zhhl.ducha.view.NoScrollListView>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>

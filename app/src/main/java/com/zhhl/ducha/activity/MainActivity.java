@@ -1,14 +1,14 @@
 package com.zhhl.ducha.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.RelativeLayout;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
 import com.flyco.tablayout.SlidingTabLayout;
 import com.zhhl.ducha.R;
@@ -22,14 +22,18 @@ import com.zhhl.ducha.xuanfu.DragFloatActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener
-{
+
+public class MainActivity extends BaseActivity implements View.OnClickListener {
+    RelativeLayout back;
     private DragFloatActionButton floatbutton;
     private List<String> titles = new ArrayList<>();
     private ArrayList<Fragment> fragmentList = new ArrayList<>();
     ViewPager view_pager;
     SlidingTabLayout mSlidingTabLayout;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +42,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener
         floatbutton.setOnClickListener(this);
         view_pager = findViewById(R.id.view_pager);
         mSlidingTabLayout = findViewById(R.id.tab_layout_qgl);
+        back = findViewById(R.id.back);
+        back.setOnClickListener(this);
         initview();
     }
 
-    public void initview()
-    {
+    public void initview() {
         titles.add("涉毒");
         titles.add("重点人员");
         titles.add("数据查询");
@@ -59,8 +64,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener
         view_pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
-            public void onPageSelected(int arg0)
-            {
+            public void onPageSelected(int arg0) {
                 fragmentList.get(arg0);
                 // mScrollLayout.getHelper().setCurrentScrollableContainer(fragmentList.get(arg0));
             }
@@ -75,20 +79,25 @@ public class MainActivity extends BaseActivity implements View.OnClickListener
             }
         });
     }
+
     private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         private List<Fragment> fragmentList;
+
         public MyFragmentPagerAdapter(FragmentManager fm, List<Fragment> fragmentList) {
             super(fm);
             this.fragmentList = fragmentList;
         }
+
         @Override
         public Fragment getItem(int position) {
             return fragmentList.get(position);
         }
+
         @Override
         public int getCount() {
             return fragmentList.size();
         }
+
         @Override
         public CharSequence getPageTitle(int position) {
             return titles.get(position);
@@ -96,26 +105,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener
     }
 
     @Override
-    public void onClick(View v)
-    {
-         switch (v.getId())
-         {
-             case R.id.floatbutton:
-                 if (view_pager.getCurrentItem() == 0)
-                 {
-                     Intent intent = new Intent(MainActivity.this, BedReportActivity.class);
-                     startActivity(intent);
-                 }
-                 else if (view_pager.getCurrentItem() == 1)
-                 {
-                     Intent intent = new Intent(MainActivity.this, HomeReportActivity.class);
-                     startActivity(intent);
-                 }
-                 else if (view_pager.getCurrentItem() == 2)
-                 {
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.floatbutton:
+                if (view_pager.getCurrentItem() == 0) {
+                    Intent intent = new Intent(MainActivity.this, BedReportActivity.class);
+                    startActivity(intent);
 
-                 }
-                 break;
-         }
+                } else if (view_pager.getCurrentItem() == 1) {
+                    Intent intent = new Intent(MainActivity.this, HomeReportActivity.class);
+                    startActivity(intent);
+                } else if (view_pager.getCurrentItem() == 2) {
+
+                }
+                break;
+            case R.id.back:
+                finish();
+                break;
+        }
     }
 }

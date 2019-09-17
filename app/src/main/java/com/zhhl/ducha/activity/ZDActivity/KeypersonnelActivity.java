@@ -1,57 +1,69 @@
 package com.zhhl.ducha.activity.ZDActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import com.alibaba.fastjson.JSON;
+import com.example.toollibrary.okhttp.exception.OkHttpException;
+import com.example.toollibrary.okhttp.listener.DisposeDataListener;
+import com.example.toollibrary.okhttp.request.RequestParams;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 import com.zhhl.ducha.R;
 import com.zhhl.ducha.activity.BaseActivity;
-import com.zhhl.ducha.adapter.Keypersonadpter;
-import com.zhhl.ducha.bean.Detabean;
+import com.zhhl.ducha.adapter.ZDKeyAdapter.Keypersonadpter;
+import com.zhhl.ducha.bean.Homebean;
+import com.zhhl.ducha.fragment.KeyFragment.LingdaoFragment;
+import com.zhhl.ducha.fragment.KeyFragment.ShikongFragment;
+import com.zhhl.ducha.fragment.KeyFragment.ZhongdianFragment;
+import com.zhhl.ducha.uri.RequestCenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by qgl on 2019/9/9 16:19.
  */
-public class KeypersonnelActivity extends BaseActivity implements PullLoadMoreRecyclerView.PullLoadMoreListener{
+public class KeypersonnelActivity extends BaseActivity {
     @BindView(R.id.keyper_rab1)
     RadioButton keyperRab1;
     @BindView(R.id.keyper_rab2)
     RadioButton keyperRab2;
     @BindView(R.id.keyper_rab3)
     RadioButton keyperRab3;
-    @BindView(R.id.sp1)
-    Spinner sp1;
-    @BindView(R.id.sp2)
-    Spinner sp2;
-    @BindView(R.id.one_listview)
-    PullLoadMoreRecyclerView oneListview;
-    private List<String> data_list;
-    private ArrayAdapter<String> arr_adapter;
-
-    private List<String> data_list_quyu;
-    private ArrayAdapter<String> arr_adapter_quyu;
-
-
-    private List<Detabean>one_case_dates;
-    private RecyclerView mRecyclerView;
-    private Keypersonadpter one_case_adapter;
-    private int mCount = 1;
-
+    @BindView(R.id.back)
+    RelativeLayout back;
+    @BindView(R.id.key_viewpager)
+    ViewPager viewPager;
+    @BindView(R.id.key_group)
+    RadioGroup keyGroup;
     private String code;
+    private FragmentManager fm;
+    private ArrayList<Object> items = new ArrayList<Object>();
+    private ViewPagerAdapter adapter;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,102 +72,117 @@ public class KeypersonnelActivity extends BaseActivity implements PullLoadMoreRe
         ButterKnife.bind(this);
         Intent intent = this.getIntent();
         code = intent.getExtras().getString("code");
-        Toast.makeText(this,code,Toast.LENGTH_SHORT).show();
-
-        //数据
-        data_list = new ArrayList<String>();
-        data_list.add("全部");
-        data_list.add("吉林");
-        data_list.add("黑龙江");
-        data_list.add("辽宁");
-
-        data_list_quyu = new ArrayList<String>();
-        data_list_quyu.add("全部");
-        data_list_quyu.add("长春");
-        data_list_quyu.add("吉林");
-        data_list_quyu.add("四平");
-        data_list_quyu.add("公主岭");
-        data_list_quyu.add("辽源");
-        data_list_quyu.add("通化");
-        data_list_quyu.add("梅河口");
-        data_list_quyu.add("白山");
-        data_list_quyu.add("松原");
-        data_list_quyu.add("白城");
-        data_list_quyu.add("延边朝鲜族自治州");
-        data_list_quyu.add("长白山");
-
-
-        //适配器
-        arr_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
-        //设置样式
-        arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //加载适配器
-        sp1.setAdapter(arr_adapter);
-
-        //适配器
-        arr_adapter_quyu = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list_quyu);
-        //设置样式
-        arr_adapter_quyu.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp2.setAdapter(arr_adapter_quyu);
-
-
-        initList();
+        Toast.makeText(this, code, Toast.LENGTH_SHORT).show();
+        fm = this.getSupportFragmentManager();
+        items.add(new LingdaoFragment());
+        items.add(new ZhongdianFragment());
+        items.add(new ShikongFragment());
+        adapter = new ViewPagerAdapter(fm, items);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(0, false);
+        viewPager.setOffscreenPageLimit(items.size());
+        initEvent();
     }
 
-    private void initList() {
-        //获取mRecyclerView对象
-        mRecyclerView = oneListview.getRecyclerView();
-        //代码设置scrollbar无效？未解决！
-        mRecyclerView.setVerticalScrollBarEnabled(true);
-        //设置下拉刷新是否可见
-        //mPullLoadMoreRecyclerView.setRefreshing(true);
-        //设置是否可以下拉刷新
-        //mPullLoadMoreRecyclerView.setPullRefreshEnable(true);
-        //设置是否可以上拉刷新
-        oneListview.setPushRefreshEnable(false);
-        //显示下拉刷新
-        oneListview.setRefreshing(true);
-        //设置上拉刷新文字
-        oneListview.setFooterViewText("loading");
-        //设置上拉刷新文字颜色
-        //mPullLoadMoreRecyclerView.setFooterViewTextColor(R.color.white);
-        //设置加载更多背景色
-        //mPullLoadMoreRecyclerView.setFooterViewBackgroundColor(R.color.colorBackground);
-        oneListview.setLinearLayout();
-
-        oneListview.setOnPullLoadMoreListener(this);
-        one_case_adapter = new Keypersonadpter(KeypersonnelActivity.this);
-        oneListview.setAdapter(one_case_adapter);
-        getdata();
-    }
-
-    private void getdata()
-    {
-        one_case_dates = new ArrayList<>();
-        Detabean people=new Detabean();
-        for (int i = 0;i<=15;i++)
-        {
-            one_case_dates.add(people);
+    @OnClick(R.id.back)
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.back:
+                finish();
+                break;
         }
-        one_case_adapter.addAllData(one_case_dates);
-        oneListview.setPullLoadMoreCompleted();
     }
 
-    @Override
-    public void onRefresh() {
-        Log.e("wxl", "onRefresh");
-        setRefresh();
-        getdata();
+
+    @SuppressWarnings("deprecation")
+    private void initEvent() {
+        keyGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.keyper_rab1:
+                        viewPager.setCurrentItem(0);// 选择某一页
+
+                        break;
+                    case R.id.keyper_rab2:
+                        viewPager.setCurrentItem(1);
+                        break;
+                    case R.id.keyper_rab3:
+                        viewPager.setCurrentItem(2);// 选择某一页
+                        break;
+
+
+                }
+            }
+        });
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        keyperRab1.setChecked(true);
+                        break;
+                    case 1:
+                        keyperRab2.setChecked(true);
+                        break;
+                    case 2:
+                        keyperRab3.setChecked(true);
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     }
 
-    @Override
-    public void onLoadMore() {
-        Log.e("wxl", "onLoadMore");
-        mCount = mCount + 1;
+    /*
+     * 获取屏幕的宽度
+     */
+    private int getW(Context context) {
+        DisplayMetrics dm = new DisplayMetrics();
+        WindowManager windowMgr = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        windowMgr.getDefaultDisplay().getMetrics(dm);
+        return dm.widthPixels;
     }
 
-    private void setRefresh() {
-        one_case_adapter.clearData();
-        mCount = 1;
+    public class ViewPagerAdapter extends FragmentPagerAdapter {
+        private ArrayList<Object> items;
+
+        public ViewPagerAdapter(FragmentManager fm, ArrayList<Object> items) {
+            super(fm);
+            this.items = items;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return (Fragment) items.get(position);
+                case 1:
+                    return (Fragment) items.get(position);
+                case 2:
+                    return (Fragment) items.get(position);
+                case 3:
+                    return (Fragment) items.get(position);
+            }
+            return (Fragment) items.get(position);
+
+        }
+
+        @Override
+        public int getCount() {
+            return items.size();
+        }
+
     }
+
 }

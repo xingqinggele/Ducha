@@ -1,256 +1,943 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp">
-        <LinearLayout
-        android:background="@drawable/home_rela_bg1"
-        android:layout_marginTop="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginLeft="13dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="13dp"
+        android:background="@drawable/home_rela_bg1"
         android:orientation="vertical">
 
         <LinearLayout
-        android:orientation="horizontal"
-        android:background="#18D3A9"
-        android:layout_width="wrap_content"
-        android:layout_height="20dp">
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:background="#2E59CE"
+            android:orientation="horizontal">
 
-        <ImageView
-        android:layout_gravity="center"
-        android:layout_marginLeft="14dp"
-        android:src="@mipmap/details_icon2"
-        android:layout_width="20dp"
-        android:layout_height="18dp" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="14dp"
+                android:src="@mipmap/details_icon3" />
 
-        <TextView
-        android:layout_marginRight="14dp"
-        android:layout_marginLeft="3dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="基本信息"
-        android:textColor="#ffffffff"
-        android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="14dp"
+                android:text="其他信息"
+                android:textColor="#ffffffff"
+                android:textSize="15sp" />
         </LinearLayout>
+
+
         <RelativeLayout
-        android:layout_marginLeft="15dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <!--姓名-->
-        <TextView
-        android:id="@+id/de_t1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="姓名："
-        android:textColor="#ff666666"
-        android:textSize="13sp"
-        />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp">
+            <!--地区-->
+            <TextView
+                android:id="@+id/de_t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地区："
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/detalis_diqu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t1"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp" />
+            <!--管理派出所稳控警员-->
+            <TextView
+                android:id="@+id/tt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/detalis_guankongyuan"
+                android:text="管理派出所稳控警员："
+                android:textColor="#ff666666"
+                android:textSize="13sp" />
+            <TextView
+                android:id="@+id/detalis_guankongyuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-        <TextView
-        android:id="@+id/detalis_name"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/de_t1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="钱三一"
-        android:textColor="#1F1F1F"
-        android:textSize="13sp"
-        />
-
-        <TextView
-        android:id="@+id/tt3"
-        android:layout_alignLeft="@+id/tt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="姓名拼音："
-        android:textColor="#ff666666"
-        android:textSize="13sp"
-        />
-        <TextView
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/tt3"
-        android:id="@+id/detalis_pname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="qiansanyi"
-        android:textColor="#1F1F1F"
-        android:textSize="13sp"
-        />
-
-        <View
-        android:layout_marginBottom="10dp"
-        android:id="@+id/view1"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/de_t1"
-        android:background="#D1D1D1"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"/>
-        <!--民族-->
-        <TextView
-        android:layout_below="@+id/view1"
-        android:id="@+id/de_t2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="民族："
-        android:textColor="#ff666666"
-        android:textSize="13sp"
-        />
-
-        <TextView
-        android:layout_below="@+id/view1"
-        android:id="@+id/detalis_nation"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/de_t2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="汉"
-        android:textColor="#1F1F1F"
-        android:textSize="13sp"
-        />
-
-        <TextView
-        android:id="@+id/tt2"
-        android:layout_alignLeft="@+id/tt1"
-        android:layout_below="@+id/view1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="性别："
-        android:textColor="#ff666666"
-        android:textSize="13sp"
-        />
-        <TextView
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/tt2"
-        android:layout_below="@+id/view1"
-        android:id="@+id/detalis_sex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="男"
-        android:textColor="#1F1F1F"
-        android:textSize="13sp"
-        />
-
-        <View
-        android:layout_marginBottom="10dp"
-        android:id="@+id/view2"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/de_t2"
-        android:background="#D1D1D1"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"/>
-
-        <!--出生日期-->
-        <TextView
-        android:layout_below="@+id/view2"
-        android:id="@+id/de_t3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="出生日期："
-        android:textColor="#ff666666"
-        android:textSize="13sp"
-        />
-        <TextView
-        android:layout_below="@+id/view2"
-        android:id="@+id/detalis_dateof_birth"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/de_t3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1992-02-27"
-        android:textColor="#1F1F1F"
-        android:textSize="13sp"
-        />
-        <TextView
-        android:id="@+id/tt1"
-        android:layout_below="@+id/view2"
-        android:layout_marginRight="5dp"
-        android:layout_toLeftOf="@+id/detalis_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="联系电话："
-        android:textColor="#ff666666"
-        android:textSize="13sp"
-        />
-        <TextView
-        android:layout_marginRight="19dp"
-        android:layout_below="@+id/view2"
-        android:id="@+id/detalis_phone"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="18843090099"
-        android:textColor="#1F1F1F"
-        android:textSize="13sp"
-        />
-
-        <TextView
-        android:layout_marginBottom="10dp"
-        android:id="@+id/view3"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/de_t3"
-        android:background="#D1D1D1"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"/>
-
-        <!--身份证号-->
-        <TextView
-        android:layout_below="@+id/view3"
-        android:id="@+id/de_t4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="身份证号："
-        android:textColor="#ff666666"
-        android:textSize="13sp"
-        />
-        <TextView
-        android:layout_below="@+id/view3"
-        android:id="@+id/detalis_id_number"
-        android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@+id/de_t4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="220722199812091234"
-        android:textColor="#1F1F1F"
-        android:textSize="13sp"/>
-        <View
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="qiansanyi"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp" />
+            <!--线-->
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/de_t1"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
-                android:id="@+id/view4"
+                android:background="#D1D1D1" />
+            <!--管理级别-->
+            <TextView
+            android:layout_below="@+id/view1"
+            android:id="@+id/de_t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="管理级别："
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            />
+            <TextView
+            android:layout_below="@+id/view1"
+            android:id="@+id/detalis_guanlijibie"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/de_t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="汉"
+            android:textColor="#1F1F1F"
+            android:textSize="13sp"
+            />
+            <!--状态-->
+            <TextView
+            android:id="@+id/tt2"
+            android:layout_alignLeft="@+id/tt3"
+            android:layout_below="@+id/view1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="状态："
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            />
+            <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tt2"
+            android:layout_below="@+id/view1"
+            android:id="@+id/detalis_zhuangtai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:textColor="#1F1F1F"
+            android:textSize="13sp"
+            />
+            <!--线-->
+            <View
+            android:layout_marginBottom="10dp"
+            android:id="@+id/view2"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/de_t2"
+            android:background="#D1D1D1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+            <!--登记时间-->
+            <TextView
+            android:layout_below="@+id/view2"
+            android:id="@+id/de_t3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登记时间："
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            />
+            <TextView
+            android:layout_below="@+id/view2"
+            android:id="@+id/detalis_dengji_time"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/de_t3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1992-02-27"
+            android:textColor="#1F1F1F"
+            android:textSize="13sp"
+            />
+
+            <!--登记单位-->
+            <TextView
+                android:layout_alignLeft="@+id/tt3"
+            android:id="@+id/tt1"
+            android:layout_below="@+id/view2"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登记单位："
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            />
+            <TextView
+                android:layout_toRightOf="@+id/tt1"
+            android:layout_below="@+id/view2"
+            android:id="@+id/detalis_dengji_danwei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18843090099"
+            android:textColor="#1F1F1F"
+            android:textSize="13sp"
+            />
+            <!--线-->
+            <TextView
+            android:layout_marginBottom="10dp"
+            android:id="@+id/view3"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/de_t3"
+            android:background="#D1D1D1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+            <!--数据来源-->
+            <TextView
+                android:visibility="visible"
+            android:layout_below="@+id/view3"
+            android:id="@+id/de_t4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="数据来源："
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            />
+            <TextView
+                android:visibility="visible"
+
+                android:layout_below="@+id/view3"
+            android:id="@+id/detalis_data_laiyuan"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/de_t4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="警钟来源"
+            android:textColor="#1F1F1F"
+            android:textSize="13sp"/>
+            <!--线-->
+            <TextView
+                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+            android:id="@+id/view4"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/de_t4"
+            android:background="#D1D1D1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+            <!--操作单位-->
+            <TextView
+                android:visibility="visible"
+
+                android:id="@+id/tt5"
+            android:layout_alignLeft="@+id/tt3"
+            android:layout_below="@+id/view3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="操作单位："
+            android:textColor="#ff666666"
+            android:textSize="13sp"
+            />
+            <TextView
+                android:visibility="visible"
+
+                android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/tt5"
+            android:layout_below="@+id/view3"
+            android:id="@+id/detalis_caozuodanwei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:textColor="#1F1F1F"
+            android:textSize="13sp"
+            />
+
+
+
+            <!--更新时间-->
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view4"
+                android:id="@+id/de_t5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="更新时间："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                 android:visibility="visible"
+
+                android:layout_below="@+id/view4"
+                android:id="@+id/detalis_gengxin_time"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+
+            <!--撤销时间-->
+            <TextView                android:visibility="visible"
+
+                android:id="@+id/tt6"
+                android:layout_alignLeft="@+id/tt3"
+                android:layout_below="@+id/view4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="撤销时间："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tt6"
+                android:layout_below="@+id/view4"
+                android:id="@+id/detalis_chexiao_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"
+                />
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view5"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t4"
+                android:layout_below="@+id/de_t5"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
-        <RelativeLayout
-                android:id="@+id/keyper_details_r1"
-                android:background="#FFFFFF"
-                android:layout_below="@+id/view4"
-                android:layout_width="match_parent"
-                android:layout_height="40dp">
 
-                <ToggleButton
-                    android:id="@+id/keyper_details_toggbtn"
-                    android:checked="true"
-                    android:disabledAlpha="100"
-                    android:background="@drawable/toggle_drawable_selector"
-                    android:textOn="@null"
-                    android:textOff="@null"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp" />
+                <!--撤销警员-->
+                <TextView                android:visibility="visible"
+
+                    android:layout_below="@+id/view5"
+                    android:id="@+id/de_t6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="撤销警员："
+                    android:textColor="#ff666666"
+                    android:textSize="13sp"
+                    />
+                <TextView                android:visibility="visible"
+
+                    android:layout_below="@+id/view5"
+                    android:id="@+id/detalis_shexiao_person"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/de_t6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2019"
+                    android:textColor="#1F1F1F"
+                    android:textSize="13sp"/>
+
+
+                <!--警种名称：-->
+                <TextView                android:visibility="visible"
+
+                    android:id="@+id/tt7"
+                    android:layout_alignLeft="@+id/tt3"
+                    android:layout_below="@+id/view5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="警种名称："
+                    android:textColor="#ff666666"
+                    android:textSize="13sp"
+                    />
+                <TextView                android:visibility="visible"
+
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tt6"
+                    android:layout_below="@+id/view5"
+                    android:id="@+id/detalis_jingzhong_person"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="男"
+                    android:textColor="#1F1F1F"
+                    android:textSize="13sp"
+                    />
+
+                <!--线-->
+                <TextView                android:visibility="visible"
+
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/view6"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/de_t6"
+                    android:background="#D1D1D1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"/>
+                <!--稳控级别-->
+                <TextView                android:visibility="visible"
+
+                    android:layout_below="@+id/view6"
+                    android:id="@+id/de_t7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="稳控级别："
+                    android:textColor="#ff666666"
+                    android:textSize="13sp"
+                    />
+                <TextView                android:visibility="visible"
+
+                    android:layout_below="@+id/view6"
+                    android:id="@+id/detalis_wenkong_jibie"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/de_t7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2019"
+                    android:textColor="#1F1F1F"
+                    android:textSize="13sp"/>
+                <!--警种稳控警员编号-->
+                <TextView                android:visibility="visible"
+
+                    android:id="@+id/tt8"
+                    android:layout_alignLeft="@+id/tt3"
+                    android:layout_below="@+id/view6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="警种稳控警员编号："
+                    android:textColor="#ff666666"
+                    android:textSize="13sp"
+                    />
+                <TextView                android:visibility="visible"
+
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/tt8"
+                    android:layout_below="@+id/view6"
+                    android:id="@+id/detalis_jingzhong_person_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="男"
+                    android:textColor="#1F1F1F"
+                    android:textSize="13sp"
+                    />
+
+                <!--线-->
+                <TextView                android:visibility="visible"
+
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/view7"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/de_t7"
+                    android:background="#D1D1D1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"/>
+            <!--警种稳控警员-->
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view7"
+                android:id="@+id/de_t8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="警种稳控警员："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view7"
+                android:id="@+id/detalis_wenkong_jingyuan"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+
+            <!--管理派出所稳控警员警号：-->
+            <TextView                android:visibility="visible"
+
+                android:id="@+id/tt9"
+                android:layout_alignLeft="@+id/tt3"
+                android:layout_below="@+id/view7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="管理派出所稳控警员警号："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/tt9"
+                android:layout_below="@+id/view7"
+                android:id="@+id/detalis_pcs_jingzhong_person_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"
+                />
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view8"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t8"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <!--警种稳控警员联系方式：-->
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view8"
+                android:id="@+id/de_t9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="警种稳控警员联系方式："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view8"
+                android:id="@+id/detalis_wenkong_jingyuan_phone"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view9"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t9"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <!--管理派出所稳控警员变动时间：-->
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view9"
+                android:id="@+id/de_t10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="管理派出所稳控警员变动时间："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view9"
+                android:id="@+id/detalis_wenkong_jingyuan_time"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view10"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t10"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+            <!--撤销警员警号：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view10"
+                android:id="@+id/de_t11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="撤销警员警号："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view10"
+                android:id="@+id/detalis_chexiao_jingyuan"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view11"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t11"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+
+            <!--户籍地详细地址：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view11"
+                android:id="@+id/de_t12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="户籍地详细地址："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view11"
+                android:id="@+id/detalis_huji_adress"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view12"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t12"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+
+
+            <!--户籍地派出所名称：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view12"
+                android:id="@+id/de_t13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="户籍地派出所名称："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view12"
+                android:id="@+id/detalis_pcs_name"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view13"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t13"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+
+
+            <!--居住地详址：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view13"
+                android:id="@+id/de_t14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="居住地详址："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view13"
+                android:id="@+id/detalis_juzhu_adress"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view14"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t14"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+
+
+            <!--居住地派出所：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view14"
+                android:id="@+id/de_t15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="居住地派出所："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view14"
+                android:id="@+id/detalis_juzhu_adress_pcs"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view15"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t15"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+
+
+            <!--警种单位名称：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view15"
+                android:id="@+id/de_t16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="警种单位名称："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view15"
+                android:id="@+id/detalis_jingzhong_danwei_name"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view16"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t16"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+
+
+            <!--管理派出所名称：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view16"
+                android:id="@+id/de_t17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="管理派出所名称："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view16"
+                android:id="@+id/detalis_guanli_pcs_name"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view17"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t17"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+
+
+
+            <!--撤销单位名称：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view17"
+                android:id="@+id/de_t18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="撤销单位名称："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view17"
+                android:id="@+id/detalis_chexiao_danwei_name"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view18"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/de_t18"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+
+
+
+
+            <!--稳控主要问题：-->
+
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view18"
+                android:id="@+id/de_t19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="稳控主要问题："
+                android:textColor="#ff666666"
+                android:textSize="13sp"
+                />
+            <TextView                android:visibility="visible"
+
+                android:layout_below="@+id/view18"
+                android:id="@+id/detalis_wenkong_context"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/de_t19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019"
+                android:textColor="#1F1F1F"
+                android:textSize="13sp"/>
+
+            <!--线-->
+            <TextView                android:visibility="visible"
+
+                android:layout_marginBottom="10dp"
+                android:id="@+id/view19"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/detalis_wenkong_context"
+                android:background="#D1D1D1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"/>
+            <RelativeLayout
+
+            android:id="@+id/keyper_details_r1"
+            android:background="#FFFFFF"
+            android:layout_below="@+id/view19"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ToggleButton
+            android:padding="20dp"
+            android:id="@+id/keyper_details_toggbtn"
+            android:checked="true"
+            android:disabledAlpha="100"
+            android:background="@drawable/toggle_drawable_selector"
+            android:textOn="@null"
+            android:textOff="@null"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
             </RelativeLayout>
 
         </RelativeLayout>
-        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

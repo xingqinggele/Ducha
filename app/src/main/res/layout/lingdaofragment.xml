@@ -1,52 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F8F8F8"
-    android:focusable="true"
-    android:focusableInTouchMode="true">
-
-    <RelativeLayout
-        android:background="#1E387F"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-
-        <RelativeLayout
-            android:id="@+id/back"
-            android:padding="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:src="@mipmap/home_icon1"
-                android:layout_width="17dp"
-                android:layout_height="23dp" />
-
-        </RelativeLayout>
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
-        <TextView
-            android:id="@+id/bed_title"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="#ffffffff"
-            android:textSize="20sp"
-            />
-
-        <ImageView
-            android:layout_marginRight="13dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:src="@mipmap/shedu_icon6"
-            android:layout_width="17dp"
-            android:layout_height="23dp" />
-
-    </RelativeLayout>
     <LinearLayout
         android:layout_marginRight="13dp"
         android:orientation="horizontal"
@@ -66,27 +23,30 @@
             android:layout_height="match_parent" />
 
         <EditText
+            android:id="@+id/edit_name"
             android:layout_weight="0.8"
             android:paddingLeft="5dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/keyper_editbg"
-            android:textSize="9sp"
+            android:textSize="13sp"
             android:hint="请输入姓名"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
 
         <EditText
+            android:id="@+id/edit_idcard"
             android:inputType="number|numberDecimal"
             android:layout_weight="1"
             android:paddingLeft="5dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/keyper_editbg"
-            android:textSize="9sp"
+            android:textSize="13sp"
             android:hint="请输入身份证号"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
 
     </LinearLayout>
+
     <RelativeLayout
         android:layout_marginRight="13dp"
         android:layout_marginLeft="13dp"
@@ -94,16 +54,18 @@
         android:layout_width="match_parent"
         android:layout_height="40dp">
 
-
         <Spinner
+            android:paddingLeft="8dp"
             android:background="@drawable/keyper_spinner_drop_down_shape"
-            android:id="@+id/sd_sp2"
+            android:id="@+id/sp2"
             android:layout_width="170dp"
             android:layout_height="match_parent">
 
         </Spinner>
 
         <TextView
+            android:id="@+id/lingdao_btn"
+            android:gravity="center"
             android:layout_marginLeft="8dp"
             android:paddingBottom="4dp"
             android:paddingTop="4dp"
@@ -111,15 +73,16 @@
             android:paddingLeft="8dp"
             android:background="@drawable/keyper_textbg"
             android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/sd_sp2"
+            android:layout_toRightOf="@+id/sp2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="查询"
             android:textColor="#ffffffff"
             android:textSize="10sp"
             />
 
         <TextView
+            android:id="@+id/list_size"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
@@ -131,16 +94,13 @@
 
 
     </RelativeLayout>
+
     <com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView
         android:layout_marginRight="13dp"
         android:layout_marginLeft="13dp"
         android:layout_marginTop="14dp"
+        android:id="@+id/one_listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/sd_listview">
-
-
+        android:layout_height="match_parent">
     </com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView>
-
-
 </LinearLayout>

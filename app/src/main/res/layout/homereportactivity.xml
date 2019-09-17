@@ -9,13 +9,19 @@
         android:background="#1E387F"
         android:layout_width="match_parent"
         android:layout_height="40dp">
-
-        <ImageView
-            android:layout_marginLeft="13dp"
+        <RelativeLayout
+            android:id="@+id/back"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
-            android:src="@mipmap/home_icon1"
-            android:layout_width="17dp"
-            android:layout_height="23dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@mipmap/home_icon1"
+                android:layout_width="17dp"
+                android:layout_height="23dp" />
+
+        </RelativeLayout>
 
         <TextView
             android:layout_centerHorizontal="true"

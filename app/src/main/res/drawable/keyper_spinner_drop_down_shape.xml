@@ -15,6 +15,7 @@
     <item>
         <bitmap
             android:gravity="end"
+
         android:src="@drawable/keyper_list_under_icon" />
     </item>
 </layer-list>

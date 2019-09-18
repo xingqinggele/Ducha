@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F8F8"
     android:descendantFocusability="blocksDescendants">
+
     <RelativeLayout
         android:background="#1E387F"
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="领导交办重点人详情"
+            android:text="被列为网逃后仍有见面稳控详情"
             android:textColor="#ffffffff"
             android:textSize="20sp"
             />

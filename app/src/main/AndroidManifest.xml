@@ -3,6 +3,7 @@
     package="com.zhhl.ducha">
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
+        android:networkSecurityConfig="@xml/network_config"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -23,9 +24,12 @@
         <activity android:name=".activity.ZDActivity.HomeReportActivity"
             android:configChanges="screenSize|keyboardHidden|orientation"/>
         <!--重点人员-->
-        <activity android:name=".activity.ZDActivity.KeypersonnelActivity"/>
+        <activity android:name=".activity.ZDActivity.lieguanactivity.YingdanglieguanlActivity"/>
         <!--重点详情-->
-        <activity android:name=".activity.ZDActivity.KeypersonnelActivityDetalis"
+        <activity android:name=".activity.ZDActivity.lieguanactivity.LingdaoActivityDetalis"
+            android:launchMode="singleTop"/>
+        <!--重点人异地一年以上-->
+        <activity android:name=".activity.ZDActivity.lieguanactivity.ZDyinianActivityDetalis"
             android:launchMode="singleTop"/>
         <!--涉毒-->
         <activity android:name=".activity.BedrugActivity.BedActivity"/>
@@ -34,6 +38,20 @@
             android:launchMode="singleTop"/>
         <!--涉毒报表-->
         <activity android:name=".activity.BedrugActivity.BedReportActivity"/>
+        <!--应当撤管未撤管-->
+        <activity android:name=".activity.ZDActivity.cheguanactivity.YingdangcheguanActivity"/>
+        <!--羁押期间或死亡-->
+        <activity android:name=".activity.ZDActivity.jiyaactivity.JiYaqijianActivity"/>
+        <!--死亡未撤管详情-->
+        <activity android:name=".activity.ZDActivity.cheguanactivity.SWweicheguanActivityDetails"/>
+        <!--羁押已死亡详情-->
+        <activity android:name=".activity.ZDActivity.jiyaactivity.JYdetaActivityDeteils"/>
+        <!--羁押在逃人员详情-->
+        <activity android:name=".activity.ZDActivity.jiyaactivity.JYZaitaoActivityDeteils"/>
+        <!--重点关注人员失控离开本地-->
+        <activity android:name=".activity.ZDActivity.ZDShiKongActivity"/>
+        <!--未按照规定录入稳控考察记录-->
+        <activity android:name=".activity.ZDActivity.WALuruActivity"/>
     </application>
 
 </manifest>

@@ -22,7 +22,7 @@ import com.example.toollibrary.okhttp.listener.DisposeDataListener;
 import com.example.toollibrary.okhttp.request.RequestParams;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 import com.zhhl.ducha.R;
-import com.zhhl.ducha.adapter.ZDKeyAdapter.Keypersonadpter;
+import com.zhhl.ducha.adapter.ZDKeyAdapter.lieguanadpter.Keypersonadpter;
 import com.zhhl.ducha.bean.Homebean;
 import com.zhhl.ducha.uri.RequestCenter;
 
@@ -147,11 +147,11 @@ public class LingdaoFragment extends Fragment implements PullLoadMoreRecyclerVie
         params.put("sfzh", ed_idcrad);
         params.put("name", ed_name);
         params.put("area", sp_area);
-        Log.e("提交的数据", ed_idcrad + ed_name + sp_area + "123");
+        Log.e("领导交办提交的数据", ed_idcrad + ed_name + sp_area + "123");
         RequestCenter.request_Qishi1(params, new DisposeDataListener() {
             @Override
             public void onSuccess(Object o) {
-                Log.e("返回数据", o.toString());
+                Log.e("领导交办返回数据", o.toString());
                 final String aa = o.toString();
                 oneListview.setRefreshing(false);
                 homebean = JSON.parseObject(aa, Homebean.class);

@@ -1,4 +1,4 @@
-package com.zhhl.ducha.fragment.KeyFragment;
+package com.zhhl.ducha.fragment.JiYaqijianFragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -22,8 +22,8 @@ import com.example.toollibrary.okhttp.listener.DisposeDataListener;
 import com.example.toollibrary.okhttp.request.RequestParams;
 import com.wuxiaolong.pullloadmorerecyclerview.PullLoadMoreRecyclerView;
 import com.zhhl.ducha.R;
-import com.zhhl.ducha.adapter.ZDKeyAdapter.lieguanadpter.Zdyinianadpter;
-import com.zhhl.ducha.bean.ZDyinianbean;
+import com.zhhl.ducha.adapter.ZDKeyAdapter.jiyaadapter.JYzaitaoadpter;
+import com.zhhl.ducha.bean.JYzaitaobean;
 import com.zhhl.ducha.uri.RequestCenter;
 
 import java.util.ArrayList;
@@ -35,44 +35,44 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
- * Created by qgl on 2019/9/16 9:59.
+ * Created by qgl on 2019/9/17 15:28.
  */
-public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerView.PullLoadMoreListener {
+public class NetescapeFragment extends Fragment implements PullLoadMoreRecyclerView.PullLoadMoreListener
+{
 
+    private View view;
+    @BindView(R.id.sp2)
+    Spinner sp2;
+    @BindView(R.id.list_size)
+    TextView listSize;
+    @BindView(R.id.one_listview)
+    PullLoadMoreRecyclerView oneListview;
     @BindView(R.id.edit_name)
     EditText editName;
     @BindView(R.id.edit_idcard)
     EditText editIdcard;
-    @BindView(R.id.sp2)
-    Spinner sp2;
     @BindView(R.id.lingdao_btn)
     TextView lingdaoBtn;
-    @BindView(R.id.list_size)
-    TextView listSize;
-    @BindView(R.id.two_listview)
-    PullLoadMoreRecyclerView twoListview;
-    private View view;
-    private List<String> data_list_quyu;
-    private ArrayAdapter<String> arr_adapter_quyu;
     private String ed_name = "";
     private String ed_idcrad = "";
     private String sp_area = "";
-    private RecyclerView mRecyclerView;
-    private Zdyinianadpter one_case_adapter;
-    private int mCount = 1;
     private Unbinder unbinder;
-    private ZDyinianbean zDyinianbean;
-    private List<ZDyinianbean.AttributesBean.VarListBean>zdvarlist;
-
-
+    private List<String> data_list_quyu;
+    private ArrayAdapter<String> arr_adapter_quyu;
+    private RecyclerView mRecyclerView;
+    private JYzaitaoadpter one_case_adapter;
+    private int mCount = 1;
+    private JYzaitaobean homebean;
+    private List<JYzaitaobean.AttributesBean.VarListBean> varListBeans = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.zhongdianfragment, container, false);
+        view = inflater.inflate(R.layout.netescapefragment, container, false);
         unbinder = ButterKnife.bind(this, view);
         spinner();
         initList();
         return view;
+
     }
 
     //    下拉列表
@@ -112,10 +112,9 @@ public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerV
             }
         });
     }
-
     private void initList() {
         //获取mRecyclerView对象
-        mRecyclerView = twoListview.getRecyclerView();
+        mRecyclerView = oneListview.getRecyclerView();
         //代码设置scrollbar无效？未解决！
         mRecyclerView.setVerticalScrollBarEnabled(true);
         //设置下拉刷新是否可见
@@ -123,50 +122,48 @@ public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerV
         //设置是否可以下拉刷新
         //mPullLoadMoreRecyclerView.setPullRefreshEnable(true);
         //设置是否可以上拉刷新
-        twoListview.setPushRefreshEnable(false);
+        oneListview.setPushRefreshEnable(false);
         //显示下拉刷新
-        twoListview.setRefreshing(true);
+        oneListview.setRefreshing(true);
         //设置上拉刷新文字
-        twoListview.setFooterViewText("loading");
+        oneListview.setFooterViewText("loading");
         //设置上拉刷新文字颜色
         //mPullLoadMoreRecyclerView.setFooterViewTextColor(R.color.white);
         //设置加载更多背景色
         //mPullLoadMoreRecyclerView.setFooterViewBackgroundColor(R.color.colorBackground);
-        twoListview.setLinearLayout();
-        twoListview.setOnPullLoadMoreListener(this);
-        one_case_adapter = new Zdyinianadpter(getActivity());
-        twoListview.setAdapter(one_case_adapter);
+        oneListview.setLinearLayout();
+        oneListview.setOnPullLoadMoreListener(this);
+        one_case_adapter = new JYzaitaoadpter(getActivity());
+        oneListview.setAdapter(one_case_adapter);
         getdata();
     }
 
     private void getdata() {
         ed_name = editName.getText().toString().trim();
         ed_idcrad = editIdcard.getText().toString().trim();
-
         //网络请求
         RequestParams params = new RequestParams();
-        params.put("gmsfzh", ed_idcrad);
-        params.put("xm", ed_name);
-        params.put("address", sp_area);
-        params.put("permit", "");
-
-        Log.e("重点人异地居住提交的数据", ed_idcrad + ed_name + sp_area + "123");
-        RequestCenter.request_Qishi2(params, new DisposeDataListener() {
+        params.put("gmsfhm",ed_idcrad);
+        params.put("xm",ed_name);
+        params.put("diqu",sp_area);
+        RequestCenter.request_Qishi5(params, new DisposeDataListener()
+        {
             @Override
-            public void onSuccess(Object o) {
-                Log.e("重点人异地居住返回数据2", o.toString());
+            public void onSuccess(Object o)
+            {
+                Log.e("被列为网逃后仍有见面稳控考察记录返回数据", o.toString());
                 final String aa = o.toString();
-                twoListview.setRefreshing(false);
-                zDyinianbean = JSON.parseObject(aa, ZDyinianbean.class);
-                zdvarlist = zDyinianbean.getAttributes().getVarList();
-                one_case_adapter.addAllData(zdvarlist);
-                twoListview.setPullLoadMoreCompleted();
-                listSize.setText("查询数量：" + zdvarlist.size() + "条");
-
+                oneListview.setRefreshing(false);
+                homebean = JSON.parseObject(aa, JYzaitaobean.class);
+                varListBeans = homebean.getAttributes().getVarList();
+                one_case_adapter.addAllData(varListBeans);
+                oneListview.setPullLoadMoreCompleted();
+                listSize.setText("查询数量：" + varListBeans.size() + "条");
             }
 
             @Override
-            public void onFailure(OkHttpException e) {
+            public void onFailure(OkHttpException e)
+            {
                 Log.e("失败", e.getEmsg() + "");
             }
 
@@ -209,6 +206,4 @@ public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerV
                 break;
         }
     }
-
-
 }

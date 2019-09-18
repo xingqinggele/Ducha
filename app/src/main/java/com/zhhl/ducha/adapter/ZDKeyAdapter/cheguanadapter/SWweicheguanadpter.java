@@ -1,4 +1,4 @@
-package com.zhhl.ducha.adapter.ZDKeyAdapter;
+package com.zhhl.ducha.adapter.ZDKeyAdapter.cheguanadapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,11 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.zhhl.ducha.R;
-import com.zhhl.ducha.activity.ZDActivity.KeypersonnelActivityDetalis;
-import com.zhhl.ducha.bean.Detabean;
-import com.zhhl.ducha.bean.Homebean;
+import com.zhhl.ducha.activity.ZDActivity.cheguanactivity.SWweicheguanActivityDetails;
+import com.zhhl.ducha.bean.SWweicheguanbean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,13 +19,13 @@ import java.util.List;
 /**
  * Created by czy on 2019/8/20 9:14.
  */
-public class Keypersonadpter extends RecyclerView.Adapter<Keypersonadpter.ViewHolder>
+public class SWweicheguanadpter extends RecyclerView.Adapter<SWweicheguanadpter.ViewHolder>
 {
     private Context mContext;
-    private List<Homebean.AttributesBean.VarListBean> dataList = new ArrayList<>();
+    private List<SWweicheguanbean.AttributesBean.VarListBean> dataList = new ArrayList<>();
 
 
-    public void addAllData(List<Homebean.AttributesBean.VarListBean> dataList) {
+    public void addAllData(List<SWweicheguanbean.AttributesBean.VarListBean> dataList) {
         this.dataList.addAll(dataList);
         notifyDataSetChanged();
     }
@@ -33,7 +34,7 @@ public class Keypersonadpter extends RecyclerView.Adapter<Keypersonadpter.ViewHo
         this.dataList.clear();
     }
 
-    public Keypersonadpter(Context context) {
+    public SWweicheguanadpter(Context context) {
         mContext = context;
     }
 
@@ -44,9 +45,9 @@ public class Keypersonadpter extends RecyclerView.Adapter<Keypersonadpter.ViewHo
         public ViewHolder(View itemView)
         {
             super(itemView);
-            key_name = (TextView) itemView.findViewById(R.id.name);
-            key_idnumber= (TextView) itemView.findViewById(R.id.idnumber);
-            key_state= (TextView) itemView.findViewById(R.id.state);
+            key_name = itemView.findViewById(R.id.name);
+            key_idnumber= itemView.findViewById(R.id.idnumber);
+            key_state= itemView.findViewById(R.id.state);
 
         }
     }
@@ -76,7 +77,7 @@ public class Keypersonadpter extends RecyclerView.Adapter<Keypersonadpter.ViewHo
             public void onClick(View view)
             {
 
-                Intent intent=new Intent(mContext, KeypersonnelActivityDetalis.class);
+                Intent intent=new Intent(mContext, SWweicheguanActivityDetails.class);
                 intent.putExtra("Idcard",dataList.get(position).getGMSFHM());
                 mContext.startActivity(intent);
             }

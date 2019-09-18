@@ -12,7 +12,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.zhhl.ducha.R;
-import com.zhhl.ducha.activity.ZDActivity.KeypersonnelActivity;
+import com.zhhl.ducha.activity.ZDActivity.jiyaactivity.JiYaqijianActivity;
+import com.zhhl.ducha.activity.ZDActivity.WALuruActivity;
+import com.zhhl.ducha.activity.ZDActivity.cheguanactivity.YingdangcheguanActivity;
+import com.zhhl.ducha.activity.ZDActivity.lieguanactivity.YingdanglieguanlActivity;
+import com.zhhl.ducha.activity.ZDActivity.ZDShiKongActivity;
 
 /**
  * Created by qgl on 2019/9/9 16:42.
@@ -43,28 +47,24 @@ public class ZDFragment extends Fragment implements View.OnClickListener
         switch (v.getId())
         {
             case R.id.zdf_r1:
-                Intent intent1 = new Intent(getActivity(), KeypersonnelActivity.class);
-                intent1.putExtra("code","1");
+                Intent intent1 = new Intent(getActivity(), YingdanglieguanlActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.zdf_r2:
-                Intent intent2 = new Intent(getActivity(), KeypersonnelActivity.class);
-                intent2.putExtra("code","2");
+                Intent intent2 = new Intent(getActivity(), YingdangcheguanActivity.class);
                 startActivity(intent2);
                 break;
             case R.id.zdf_r3:
-                Intent intent3 = new Intent(getActivity(), KeypersonnelActivity.class);
-                intent3.putExtra("code","3");
+                Intent intent3 = new Intent(getActivity(), JiYaqijianActivity.class);
                 startActivity(intent3);
                 break;
             case R.id.zdf_r4:
-                Intent intent4 = new Intent(getActivity(), KeypersonnelActivity.class);
-                intent4.putExtra("code","4");
+
+                Intent intent4 = new Intent(getActivity(), ZDShiKongActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.zdf_r5:
-                Intent intent5 = new Intent(getActivity(), KeypersonnelActivity.class);
-                intent5.putExtra("code","5");
+                Intent intent5 = new Intent(getActivity(), WALuruActivity.class);
                 startActivity(intent5);
                 break;
         }

@@ -1,4 +1,4 @@
-package com.zhhl.ducha.fragment.KeyFragment;
+package com.zhhl.ducha.fragment.WALuruFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,16 +12,15 @@ import androidx.fragment.app.Fragment;
 import com.zhhl.ducha.R;
 
 /**
- * Created by qgl on 2019/9/16 10:00.
+ * Created by qgl on 2019/9/18 11:26.
  */
-public class ShikongFragment extends Fragment
+public class WALuruwenkongFragment extends Fragment
 {
     private View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.shikongfragment, container, false);
+        view = inflater.inflate(R.layout.zdshikongfragment, container, false);
         return view;
-
     }
 }

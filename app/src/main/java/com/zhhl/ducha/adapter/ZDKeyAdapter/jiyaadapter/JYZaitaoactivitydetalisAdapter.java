@@ -1,45 +1,41 @@
-package com.zhhl.ducha.adapter.ZDKeyAdapter;
+package com.zhhl.ducha.adapter.ZDKeyAdapter.jiyaadapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.zhhl.ducha.R;
-import com.zhhl.ducha.activity.ZDActivity.KeypersonnelActivityDetalis;
-import com.zhhl.ducha.bean.Detabean;
-import com.zhhl.ducha.bean.Homedetalisbean;
+import com.zhhl.ducha.bean.JYDeaddeteilsbean;
+import com.zhhl.ducha.bean.JYZaitaoDeteilsbean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by qgl on 2019/9/11 9:03.
  */
-public class KeyperdetalisAdapter extends BaseAdapter
+public class JYZaitaoactivitydetalisAdapter extends BaseAdapter
 {
-    List<Homedetalisbean.AttributesBean.ListDataBean> apk_list;
+    List<JYZaitaoDeteilsbean.AttributesBean.ZdrListBean> apk_list;
     LayoutInflater inflater;
     private Context context;
     private int selectorPosition;
-    public KeyperdetalisAdapter(Context context, List<Homedetalisbean.AttributesBean.ListDataBean> apk_list)
+
+    public JYZaitaoactivitydetalisAdapter(Context context, List<JYZaitaoDeteilsbean.AttributesBean.ZdrListBean> apk_list)
     {
         this.apk_list = apk_list;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
     }
 
-    public void onDateChange(List<Homedetalisbean.AttributesBean.ListDataBean> apk_list)
+
+
+
+    public void onDateChange(List<JYZaitaoDeteilsbean.AttributesBean.ZdrListBean> apk_list)
     {
         this.apk_list = apk_list;
         this.notifyDataSetChanged();
@@ -69,7 +65,7 @@ public class KeyperdetalisAdapter extends BaseAdapter
     public View getView(final int position, View convertView, ViewGroup parent)
     {
         // TODO Auto-generated method stub
-        final Homedetalisbean.AttributesBean.ListDataBean entity = apk_list.get(position);
+        final JYZaitaoDeteilsbean.AttributesBean.ZdrListBean entity = apk_list.get(position);
         ViewHolder holder;
         if (convertView == null)
         {
@@ -184,24 +180,31 @@ public class KeyperdetalisAdapter extends BaseAdapter
             holder.detalis_data_laiyuan.setText("警种录入");
         }
         holder.detalis_caozuodanwei.setText(entity.getCZDWMC());
+//        holder.detalis_caozuodanwei.setText("");
         holder.detalis_gengxin_time.setText(entity.getGXSJ());
-        holder.detalis_chexiao_time.setText(entity.getCXSJ());
-        holder.detalis_shexiao_person.setText(entity.getCXRXM());
+//        holder.detalis_chexiao_time.setText(entity.getCXSJ());
+        holder.detalis_chexiao_time.setText("");
+//        holder.detalis_shexiao_person.setText(entity.getCXRXM());
+        holder.detalis_shexiao_person.setText("");
         holder.detalis_jingzhong_person.setText(entity.getJZMC());
         holder.detalis_jingzhong_person_number.setText(entity.getJZWKRJH());
         holder.detalis_wenkong_jingyuan.setText(entity.getJZWKRXM());
         holder.detalis_pcs_jingzhong_person_number.setText(entity.getPCSWKRJH());
         holder.detalis_wenkong_jingyuan_phone.setText(entity.getJZWKRDH());
-        holder.detalis_wenkong_jingyuan_time.setText(entity.getPCSWKRBDSJ());
-        holder.detalis_chexiao_jingyuan.setText(entity.getCXRJH());
+//        holder.detalis_wenkong_jingyuan_time.setText(entity.getPCSWKRBDSJ());
+        holder.detalis_wenkong_jingyuan_time.setText("");
+//        holder.detalis_chexiao_jingyuan.setText(entity.getCXRJH());
+        holder.detalis_chexiao_jingyuan.setText("");
         holder.detalis_wenkong_jibie.setText(entity.getWKJBMC());
         holder.detalis_huji_adress.setText(entity.getHJDZXZ());
         holder.detalis_pcs_name.setText(entity.getHJDPCSMC());
         holder.detalis_juzhu_adress.setText(entity.getSJJZDZXZ());
         holder.detalis_juzhu_adress_pcs.setText(entity.getSJJZDPCSMC());
+//        holder.detalis_juzhu_adress_pcs.setText("");
         holder.detalis_jingzhong_danwei_name.setText(entity.getJZGAJGJGMC());
         holder.detalis_guanli_pcs_name.setText(entity.getPCSJGMC());
-        holder.detalis_chexiao_danwei_name.setText(entity.getCXJGMC());
+//        holder.detalis_chexiao_danwei_name.setText(entity.getCXJGMC());
+        holder.detalis_chexiao_danwei_name.setText("");
         holder.detalis_wenkong_context.setText(entity.getZYWT());
 //        点击收缩按钮
         holder.keyper_details_toggbtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -210,7 +213,6 @@ public class KeyperdetalisAdapter extends BaseAdapter
             {
                 if (isChecked)
                 {
-
                     holder.de_t4.setVisibility(View.VISIBLE);
                     holder.detalis_data_laiyuan.setVisibility(View.VISIBLE);
                     holder.view4.setVisibility(View.VISIBLE);
@@ -269,7 +271,6 @@ public class KeyperdetalisAdapter extends BaseAdapter
                     holder.de_t19.setVisibility(View.VISIBLE);
                     holder.detalis_wenkong_context.setVisibility(View.VISIBLE);
                     holder.view19.setVisibility(View.VISIBLE);
-                    notifyDataSetChanged();
                 }
                 else
                 {
@@ -331,7 +332,6 @@ public class KeyperdetalisAdapter extends BaseAdapter
                     holder.de_t19.setVisibility(View.GONE);
                     holder.detalis_wenkong_context.setVisibility(View.GONE);
                     holder.view19.setVisibility(View.GONE);
-                    notifyDataSetChanged();
 
                 }
             }
@@ -412,7 +412,7 @@ public class KeyperdetalisAdapter extends BaseAdapter
 
     }
 
-    public void addListView(Homedetalisbean.AttributesBean.ListDataBean pBean)
+    public void addListView(JYZaitaoDeteilsbean.AttributesBean.ZdrListBean pBean)
     {
         apk_list.add(pBean);
 
@@ -423,5 +423,9 @@ public class KeyperdetalisAdapter extends BaseAdapter
         selectorPosition = pos;
         notifyDataSetChanged();
     }
+
+
+
+
 
 }

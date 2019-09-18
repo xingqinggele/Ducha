@@ -75,11 +75,9 @@
                 android:id="@+id/detalis_guankongyuan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:text="qiansanyi"
+                android:layout_marginRight="50dp"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp" />
             <!--线-->
@@ -87,7 +85,7 @@
                 android:id="@+id/view1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:layout_below="@+id/de_t1"
+                android:layout_below="@+id/detalis_guankongyuan"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
@@ -109,7 +107,6 @@
             android:layout_toRightOf="@+id/de_t2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="汉"
             android:textColor="#1F1F1F"
             android:textSize="13sp"
             />
@@ -131,7 +128,6 @@
             android:id="@+id/detalis_zhuangtai"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="男"
             android:textColor="#1F1F1F"
             android:textSize="13sp"
             />
@@ -141,7 +137,7 @@
             android:id="@+id/view2"
             android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/de_t2"
+            android:layout_below="@+id/detalis_zhuangtai"
             android:background="#D1D1D1"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"/>
@@ -163,7 +159,6 @@
             android:layout_toRightOf="@+id/de_t3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1992-02-27"
             android:textColor="#1F1F1F"
             android:textSize="13sp"
             />
@@ -186,7 +181,6 @@
             android:id="@+id/detalis_dengji_danwei"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="18843090099"
             android:textColor="#1F1F1F"
             android:textSize="13sp"
             />
@@ -196,7 +190,7 @@
             android:id="@+id/view3"
             android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/de_t3"
+            android:layout_below="@+id/detalis_dengji_danwei"
             android:background="#D1D1D1"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"/>
@@ -221,7 +215,6 @@
             android:layout_toRightOf="@+id/de_t4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="警钟来源"
             android:textColor="#1F1F1F"
             android:textSize="13sp"/>
             <!--线-->
@@ -232,7 +225,7 @@
             android:id="@+id/view4"
             android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/de_t4"
+            android:layout_below="@+id/detalis_data_laiyuan"
             android:background="#D1D1D1"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"/>
@@ -259,7 +252,6 @@
             android:id="@+id/detalis_caozuodanwei"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="男"
             android:textColor="#1F1F1F"
             android:textSize="13sp"
             />
@@ -285,7 +277,6 @@
                 android:layout_toRightOf="@+id/de_t5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -310,7 +301,6 @@
                 android:id="@+id/detalis_chexiao_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="男"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"
                 />
@@ -322,7 +312,7 @@
                 android:id="@+id/view5"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t5"
+                android:layout_below="@+id/detalis_chexiao_time"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -346,7 +336,6 @@
                     android:layout_toRightOf="@+id/de_t6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2019"
                     android:textColor="#1F1F1F"
                     android:textSize="13sp"/>
 
@@ -371,7 +360,6 @@
                     android:id="@+id/detalis_jingzhong_person"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="男"
                     android:textColor="#1F1F1F"
                     android:textSize="13sp"
                     />
@@ -383,7 +371,7 @@
                     android:id="@+id/view6"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="10dp"
-                    android:layout_below="@+id/de_t6"
+                    android:layout_below="@+id/detalis_jingzhong_person"
                     android:background="#D1D1D1"
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"/>
@@ -406,7 +394,6 @@
                     android:layout_toRightOf="@+id/de_t7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2019"
                     android:textColor="#1F1F1F"
                     android:textSize="13sp"/>
                 <!--警种稳控警员编号-->
@@ -429,7 +416,6 @@
                     android:id="@+id/detalis_jingzhong_person_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="男"
                     android:textColor="#1F1F1F"
                     android:textSize="13sp"
                     />
@@ -441,7 +427,7 @@
                     android:id="@+id/view7"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="10dp"
-                    android:layout_below="@+id/de_t7"
+                    android:layout_below="@+id/detalis_jingzhong_person_number"
                     android:background="#D1D1D1"
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"/>
@@ -464,7 +450,6 @@
                 android:layout_toRightOf="@+id/de_t8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -489,7 +474,6 @@
                 android:id="@+id/detalis_pcs_jingzhong_person_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="男"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"
                 />
@@ -500,7 +484,7 @@
                 android:id="@+id/view8"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t8"
+                android:layout_below="@+id/detalis_pcs_jingzhong_person_number"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -524,7 +508,6 @@
                 android:layout_toRightOf="@+id/de_t9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
             <!--线-->
@@ -534,7 +517,7 @@
                 android:id="@+id/view9"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t9"
+                android:layout_below="@+id/detalis_wenkong_jingyuan_phone"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -558,7 +541,6 @@
                 android:layout_toRightOf="@+id/de_t10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
             <!--线-->
@@ -568,7 +550,7 @@
                 android:id="@+id/view10"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t10"
+                android:layout_below="@+id/detalis_wenkong_jingyuan_time"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -593,7 +575,6 @@
                 android:layout_toRightOf="@+id/de_t11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -604,7 +585,7 @@
                 android:id="@+id/view11"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t11"
+                android:layout_below="@+id/detalis_chexiao_jingyuan"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -630,7 +611,6 @@
                 android:layout_toRightOf="@+id/de_t12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -641,7 +621,7 @@
                 android:id="@+id/view12"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t12"
+                android:layout_below="@+id/detalis_huji_adress"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -668,7 +648,6 @@
                 android:layout_toRightOf="@+id/de_t12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -680,7 +659,7 @@
                 android:id="@+id/view13"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t13"
+                android:layout_below="@+id/detalis_pcs_name"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -707,7 +686,6 @@
                 android:layout_toRightOf="@+id/de_t14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -718,7 +696,7 @@
                 android:id="@+id/view14"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t14"
+                android:layout_below="@+id/detalis_juzhu_adress"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -745,7 +723,6 @@
                 android:layout_toRightOf="@+id/de_t15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -756,7 +733,7 @@
                 android:id="@+id/view15"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t15"
+                android:layout_below="@+id/detalis_juzhu_adress_pcs"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -783,7 +760,6 @@
                 android:layout_toRightOf="@+id/de_t16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -794,7 +770,7 @@
                 android:id="@+id/view16"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t16"
+                android:layout_below="@+id/detalis_jingzhong_danwei_name"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -821,7 +797,6 @@
                 android:layout_toRightOf="@+id/de_t17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -833,7 +808,7 @@
                 android:id="@+id/view17"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t17"
+                android:layout_below="@+id/detalis_guanli_pcs_name"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -861,7 +836,6 @@
                 android:layout_toRightOf="@+id/de_t18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -872,7 +846,7 @@
                 android:id="@+id/view18"
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/de_t18"
+                android:layout_below="@+id/detalis_chexiao_danwei_name"
                 android:background="#D1D1D1"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"/>
@@ -900,7 +874,6 @@
                 android:layout_toRightOf="@+id/de_t19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2019"
                 android:textColor="#1F1F1F"
                 android:textSize="13sp"/>
 
@@ -933,8 +906,8 @@
             android:textOff="@null"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:layout_width="20dp"
-            android:layout_height="20dp" />
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
 
             </RelativeLayout>
 

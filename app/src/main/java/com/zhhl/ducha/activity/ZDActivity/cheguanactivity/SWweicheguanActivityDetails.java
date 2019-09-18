@@ -1,5 +1,6 @@
-package com.zhhl.ducha.activity.ZDActivity;
+package com.zhhl.ducha.activity.ZDActivity.cheguanactivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +9,6 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.alibaba.fastjson.JSON;
@@ -17,10 +17,9 @@ import com.example.toollibrary.okhttp.listener.DisposeDataListener;
 import com.example.toollibrary.okhttp.request.RequestParams;
 import com.zhhl.ducha.R;
 import com.zhhl.ducha.activity.BaseActivity;
-import com.zhhl.ducha.adapter.ZDKeyAdapter.KeyperdetalisAdapter;
-import com.zhhl.ducha.bean.Homedetalisbean;
+import com.zhhl.ducha.adapter.ZDKeyAdapter.cheguanadapter.SWweicheguandetalisAdapter;
+import com.zhhl.ducha.bean.Detedetailsbean;
 import com.zhhl.ducha.uri.RequestCenter;
-import com.zhhl.ducha.view.NoScrollListView;
 
 import java.util.List;
 
@@ -29,10 +28,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by qgl on 2019/9/9 16:19.
+ * Created by qgl on 2019/9/17 16:02.
  */
-public class KeypersonnelActivityDetalis extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
-
+public class SWweicheguanActivityDetails extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener
+{
     @BindView(R.id.back)
     RelativeLayout back;
     @BindView(R.id.de_t1)
@@ -69,17 +68,19 @@ public class KeypersonnelActivityDetalis extends BaseActivity implements SwipeRe
     TextView deT4;
     @BindView(R.id.detalis_id_number)
     TextView detalisIdNumber;
-    private KeyperdetalisAdapter one_case_adapter;
+    private SWweicheguandetalisAdapter one_case_adapter;
     private String idcrad;
-    private Homedetalisbean homedetalisbean;
-    private List<Homedetalisbean.AttributesBean.ListDataBean> extraData;
     private ListView mListView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    private Detedetailsbean zDyiniandetailsbean;
+    private List<Detedetailsbean.AttributesBean.VarListBean> zdrListBeans;
+    ProgressDialog progressDialog;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.keypersonnelactivity_detalis);
+        setContentView(R.layout.swweicheguanactivitydetails);
         ButterKnife.bind(this);
         Intent intent = this.getIntent();
         idcrad = intent.getExtras().getString("Idcard");
@@ -87,47 +88,60 @@ public class KeypersonnelActivityDetalis extends BaseActivity implements SwipeRe
     }
 
     public void initView() {
-        mListView = (ListView) findViewById(R.id.listview);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+        mListView = findViewById(R.id.listview);
+        mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorScheme(android.R.color.holo_blue_bright, android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light);
+        if (progressDialog == null)
+            progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("正在请求，请稍后...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         getdata();
+
+
     }
 
     private void getdata() {
         //网络请求
         RequestParams params = new RequestParams();
-        params.put("sfzh", idcrad);
-        Log.e("提交的数据", idcrad);
-        RequestCenter.request_Qishi1_Detalis(params, new DisposeDataListener() {
+        params.put("GMSFHM",idcrad);
+        RequestCenter.request_Qishi3_details(params, new DisposeDataListener()
+        {
             @Override
-            public void onSuccess(Object o) {
-                Log.e("返回数据", o.toString());
+            public void onSuccess(Object o)
+            {
+                progressDialog.dismiss();
+                Log.e("死亡未撤管详情返回数据", o.toString());
                 final String aa = o.toString();
-                homedetalisbean = JSON.parseObject(aa, Homedetalisbean.class);
-                extraData = homedetalisbean.getAttributes().getListData();
-                if (extraData.size()>=1)
+                zDyiniandetailsbean = JSON.parseObject(aa, Detedetailsbean.class);
+                zdrListBeans = zDyiniandetailsbean.getAttributes().getVarList();
+                if (zdrListBeans.size()>=1)
                 {
-                    detalisName.setText(extraData.get(0).getXM());
-                    detalisPname.setText(extraData.get(0).getXMPY());
-                    detalisNation.setText(extraData.get(0).getMZMC());
-                    detalisSex.setText(extraData.get(0).getXBMC());
-                    detalisDateofBirth.setText(extraData.get(0).getCSRQ());
-                    detalisPhone.setText(extraData.get(0).getJZWKRDH());
-                    detalisIdNumber.setText(extraData.get(0).getGMSFHM());
+                    detalisName.setText(zdrListBeans.get(0).getXM());
+                    detalisPname.setText(zdrListBeans.get(0).getXMPY());
+                    detalisNation.setText(zdrListBeans.get(0).getMZMC());
+                    detalisSex.setText(zdrListBeans.get(0).getXBMC());
+                    detalisDateofBirth.setText(zdrListBeans.get(0).getCSRQ());
+                    detalisPhone.setText(zdrListBeans.get(0).getJZWKRDH());
+                    detalisIdNumber.setText(zdrListBeans.get(0).getGMSFHM());
                 }
-                one_case_adapter = new KeyperdetalisAdapter(KeypersonnelActivityDetalis.this, extraData);
+                one_case_adapter = new SWweicheguandetalisAdapter(SWweicheguanActivityDetails.this, zdrListBeans);
                 mListView.setAdapter(one_case_adapter);
                 one_case_adapter.notifyDataSetChanged();
                 mSwipeRefreshLayout.setRefreshing(false);
             }
 
             @Override
-            public void onFailure(OkHttpException e) {
+            public void onFailure(OkHttpException e)
+            {
+                progressDialog.dismiss();
                 Log.e("失败", e.getEmsg() + "");
             }
 
         });
+
+
     }
 
     public void onRefresh() {
@@ -142,4 +156,5 @@ public class KeypersonnelActivityDetalis extends BaseActivity implements SwipeRe
                 break;
         }
     }
+
 }

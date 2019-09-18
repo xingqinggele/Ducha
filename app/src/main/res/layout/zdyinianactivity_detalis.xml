@@ -29,7 +29,7 @@
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="领导交办重点人详情"
+            android:text="重点人异地居住一年以上详情"
             android:textColor="#ffffffff"
             android:textSize="20sp"
             />

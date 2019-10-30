@@ -63,6 +63,7 @@ public class YingdangcheguanActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_table:
+
                 Intent intent = new Intent(YingdangcheguanActivity.this, SWTableActivity.class);
                 startActivity(intent);
                 break;

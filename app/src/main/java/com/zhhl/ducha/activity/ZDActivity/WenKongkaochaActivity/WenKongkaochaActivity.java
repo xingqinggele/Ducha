@@ -1,4 +1,4 @@
-package com.zhhl.ducha.activity.ZDActivity;
+package com.zhhl.ducha.activity.ZDActivity.WenKongkaochaActivity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -13,8 +13,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.zhhl.ducha.R;
 import com.zhhl.ducha.activity.BaseActivity;
-import com.zhhl.ducha.fragment.WALuruFragment.WALuruwenkongFragment;
-import com.zhhl.ducha.fragment.ZDShikongFragment.ZDShiKongFragment;
+import com.zhhl.ducha.fragment.WenKongkaochaFragment.WenKongFragment1;
+import com.zhhl.ducha.fragment.WenKongkaochaFragment.WenKongFragment2;
 
 import java.util.ArrayList;
 
@@ -25,10 +25,12 @@ import butterknife.OnClick;
 /**
  * Created by qgl on 2019/9/18 11:20.
  */
-public class WALuruActivity extends BaseActivity
+public class WenKongkaochaActivity extends BaseActivity
 {
     @BindView(R.id.keyper_rab1)
     RadioButton keyperRab1;
+     @BindView(R.id.keyper_rab2)
+    RadioButton keyperRab2;
     @BindView(R.id.back)
     RelativeLayout back;
     @BindView(R.id.key_viewpager)
@@ -45,7 +47,8 @@ public class WALuruActivity extends BaseActivity
         setContentView(R.layout.waluruactivity);
         ButterKnife.bind(this);
         fm = this.getSupportFragmentManager();
-        items.add(new WALuruwenkongFragment());
+        items.add(new WenKongFragment1());
+        items.add(new WenKongFragment2());
         adapter = new ViewPagerAdapter(fm, items);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(0, false);
@@ -70,9 +73,10 @@ public class WALuruActivity extends BaseActivity
                 switch (checkedId) {
                     case R.id.keyper_rab1:
                         viewPager.setCurrentItem(0);// 选择某一页
-
                         break;
-
+                    case R.id.keyper_rab2:
+                        viewPager.setCurrentItem(1);// 选择某一页
+                        break;
 
                 }
             }
@@ -85,8 +89,9 @@ public class WALuruActivity extends BaseActivity
                     case 0:
                         keyperRab1.setChecked(true);
                         break;
-
-
+                    case 1:
+                        keyperRab2.setChecked(true);
+                        break;
                 }
             }
 
@@ -114,6 +119,9 @@ public class WALuruActivity extends BaseActivity
             switch (position) {
                 case 0:
                     return (Fragment) items.get(position);
+                case 1:
+                    return (Fragment) items.get(position);
+
 
             }
             return (Fragment) items.get(position);

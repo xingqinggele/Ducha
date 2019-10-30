@@ -1,13 +1,16 @@
 package com.zhhl.ducha.activity.ZDActivity.lieguanactivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -17,6 +20,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.zhhl.ducha.R;
 import com.zhhl.ducha.activity.BaseActivity;
+import com.zhhl.ducha.activity.TableActivity.LTableActivity1;
+import com.zhhl.ducha.activity.TableActivity.LTableActivity2;
 import com.zhhl.ducha.fragment.KeyFragment.LingdaoFragment;
 import com.zhhl.ducha.fragment.KeyFragment.ZhongdianFragment;
 
@@ -34,8 +39,6 @@ public class YingdanglieguanlActivity extends BaseActivity {
     RadioButton keyperRab1;
     @BindView(R.id.keyper_rab2)
     RadioButton keyperRab2;
-    //    @BindView(R.id.keyper_rab3)
-//    RadioButton keyperRab3;
     @BindView(R.id.back)
     RelativeLayout back;
     @BindView(R.id.key_viewpager)
@@ -46,8 +49,9 @@ public class YingdanglieguanlActivity extends BaseActivity {
     private FragmentManager fm;
     private ArrayList<Object> items = new ArrayList<Object>();
     private ViewPagerAdapter adapter;
-
-
+    @BindView(R.id.tv_table)
+    TextView tv_table;
+    private String type = "1";
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +60,6 @@ public class YingdanglieguanlActivity extends BaseActivity {
         fm = this.getSupportFragmentManager();
         items.add(new LingdaoFragment());
         items.add(new ZhongdianFragment());
-//        items.add(new SWweicheguanFragment());
         adapter = new ViewPagerAdapter(fm, items);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(0, false);
@@ -64,11 +67,25 @@ public class YingdanglieguanlActivity extends BaseActivity {
         initEvent();
     }
 
-    @OnClick(R.id.back)
+    @OnClick({R.id.back,R.id.tv_table})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.back:
                 finish();
+                break;
+            case R.id.tv_table:
+                Log.e("type",type);
+                if (type.equals("1"))
+                {
+                    Intent intent = new Intent(YingdanglieguanlActivity.this, LTableActivity1.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Intent intent = new Intent(YingdanglieguanlActivity.this, LTableActivity2.class);
+                    startActivity(intent);
+                }
+
                 break;
         }
     }
@@ -82,15 +99,12 @@ public class YingdanglieguanlActivity extends BaseActivity {
                 switch (checkedId) {
                     case R.id.keyper_rab1:
                         viewPager.setCurrentItem(0);// 选择某一页
-
+                        type = "1";
                         break;
                     case R.id.keyper_rab2:
                         viewPager.setCurrentItem(1);
+                        type = "2";
                         break;
-//                    case R.id.keyper_rab3:
-//                        viewPager.setCurrentItem(2);// 选择某一页
-//                        break;
-
 
                 }
             }
@@ -102,13 +116,12 @@ public class YingdanglieguanlActivity extends BaseActivity {
                 switch (position) {
                     case 0:
                         keyperRab1.setChecked(true);
+                        type = "1";
                         break;
                     case 1:
                         keyperRab2.setChecked(true);
+                        type = "2";
                         break;
-//                    case 2:
-//                        keyperRab3.setChecked(true);
-//                        break;
 
                 }
             }
@@ -147,12 +160,9 @@ public class YingdanglieguanlActivity extends BaseActivity {
             switch (position) {
                 case 0:
                     return (Fragment) items.get(position);
+
                 case 1:
                     return (Fragment) items.get(position);
-//                case 2:
-//                    return (Fragment) items.get(position);
-//                case 3:
-//                    return (Fragment) items.get(position);
             }
             return (Fragment) items.get(position);
 

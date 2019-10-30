@@ -143,7 +143,7 @@ public class KeyperdetalisAdapter extends BaseAdapter
         {
             holder = (ViewHolder) convertView.getTag();
         }
-//        holder.detalis_diqu.setText(entity.getName());
+        holder.detalis_diqu.setText(entity.getDQM());
         holder.detalis_guankongyuan.setText(entity.getPCSWKRXM());
         //        管理级别
         if (entity.getGLJB().equals("C"))

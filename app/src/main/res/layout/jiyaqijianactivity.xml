@@ -62,7 +62,7 @@
             android:layout_width="10dp"
             android:layout_height="match_parent"/>
         <RadioButton
-            android:layout_marginRight="10dp"
+
             android:textSize="14sp"
             android:textColor="@drawable/keyper_tab_txtcolor"
             android:background="@drawable/keyper_tab_icon1"
@@ -74,23 +74,23 @@
             android:text="被列为网逃后仍有见面稳控考察记录"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
-        <!--<View-->
-        <!--android:layout_width="10dp"-->
-        <!--android:layout_height="match_parent"/>-->
-        <!--<RadioButton-->
-        <!--android:textSize="14sp"-->
 
-        <!--android:textColor="@drawable/keyper_tab_txtcolor"-->
-        <!--android:background="@drawable/keyper_tab_icon1"-->
-        <!--android:id="@+id/keyper_rab3"-->
-        <!--android:checked="false"-->
-        <!--android:gravity="center"-->
-        <!--android:layout_marginRight="10dp"-->
-        <!--android:layout_weight="1"-->
-        <!--android:button="@null"-->
-        <!--android:text="失控离开本地重点人"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="match_parent" />-->
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"/>
+        <RadioButton
+            android:layout_marginRight="10dp"
+            android:textSize="14sp"
+            android:textColor="@drawable/keyper_tab_txtcolor"
+            android:background="@drawable/keyper_tab_icon1"
+            android:id="@+id/keyper_rab3"
+            android:checked="false"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="羁押拘留期间仍有见面稳控考察记录"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
 
 
     </RadioGroup>

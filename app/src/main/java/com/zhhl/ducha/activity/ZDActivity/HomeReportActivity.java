@@ -19,8 +19,6 @@ import com.zhhl.ducha.bean.ZDtablenianbean;
 import com.zhhl.ducha.bean.ZDtableyuebean;
 import com.zhhl.ducha.uri.RequestCenter;
 
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -81,6 +79,10 @@ public class HomeReportActivity extends BaseActivity implements SwipeRefreshLayo
     TextView zdnHj;
     @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
+    @BindView(R.id.zdy_th)
+    TextView zdyTh;
+    @BindView(R.id.zdn_th)
+    TextView zdnTh;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     ProgressDialog progressDialog;
     //    月数据
@@ -95,8 +97,6 @@ public class HomeReportActivity extends BaseActivity implements SwipeRefreshLayo
         setContentView(R.layout.homereportactivity);
         ButterKnife.bind(this);
         initView();
-
-
     }
 
     public void initView() {
@@ -123,19 +123,19 @@ public class HomeReportActivity extends BaseActivity implements SwipeRefreshLayo
                 Log.e("重点人表格月返回数据", o.toString());
                 final String aa = o.toString();
                 zDtableyuebean = JSON.parseObject(aa, ZDtableyuebean.class);
-                Log.e("长春",zDtableyuebean.getAttributes().getThreeCount().getCc()+"");
-                zdyCc.setText(zDtableyuebean.getAttributes().getThreeCount().getCc()+"");
-                zdyJl.setText(zDtableyuebean.getAttributes().getThreeCount().getJl()+"");
-                zdySp.setText(zDtableyuebean.getAttributes().getThreeCount().getSp()+"");
-                zdyGzl.setText(zDtableyuebean.getAttributes().getThreeCount().getGzl()+"");
-                zdyLy.setText(zDtableyuebean.getAttributes().getThreeCount().getLy()+"");
-                zdyMhk.setText(zDtableyuebean.getAttributes().getThreeCount().getMhk()+"");
-                zdyBs.setText(zDtableyuebean.getAttributes().getThreeCount().getBs()+"");
-                zdySy.setText(zDtableyuebean.getAttributes().getThreeCount().getSy()+"");
-                zdyBc.setText(zDtableyuebean.getAttributes().getThreeCount().getBc()+"");
-                zdyYb.setText(zDtableyuebean.getAttributes().getThreeCount().getYj()+"");
-                zdyCbs.setText(zDtableyuebean.getAttributes().getThreeCount().getCbs()+"");
-                zdyHj.setText(zDtableyuebean.getAttributes().getThreeCount().getLy()+"");
+                Log.e("长春", zDtableyuebean.getAttributes().getThreeCount().getCc() + "");
+                zdyCc.setText(zDtableyuebean.getAttributes().getThreeCount().getCc() + "");
+                zdyJl.setText(zDtableyuebean.getAttributes().getThreeCount().getJl() + "");
+                zdySp.setText(zDtableyuebean.getAttributes().getThreeCount().getSp() + "");
+                zdyGzl.setText(zDtableyuebean.getAttributes().getThreeCount().getGzl() + "");
+                zdyLy.setText(zDtableyuebean.getAttributes().getThreeCount().getLy() + "");
+                zdyMhk.setText(zDtableyuebean.getAttributes().getThreeCount().getMhk() + "");
+                zdyBs.setText(zDtableyuebean.getAttributes().getThreeCount().getBs() + "");
+                zdySy.setText(zDtableyuebean.getAttributes().getThreeCount().getSy() + "");
+                zdyBc.setText(zDtableyuebean.getAttributes().getThreeCount().getBc() + "");
+                zdyYb.setText(zDtableyuebean.getAttributes().getThreeCount().getYj() + "");
+                zdyCbs.setText(zDtableyuebean.getAttributes().getThreeCount().getCbs() + "");
+                zdyTh.setText(zDtableyuebean.getAttributes().getThreeCount().getTh() + "");
                 mSwipeRefreshLayout.setRefreshing(false);
             }
 
@@ -158,19 +158,20 @@ public class HomeReportActivity extends BaseActivity implements SwipeRefreshLayo
                 progressDialog.dismiss();
                 Log.e("重点人表格年返回数据", o.toString());
                 final String aa = o.toString();
-                zDtablenianbean = JSON.parseObject(aa,ZDtablenianbean.class);
-                zdnCc.setText(zDtablenianbean.getAttributes().getAllCount().getCc()+"");
-                zdnJl.setText(zDtablenianbean.getAttributes().getAllCount().getJl()+"");
-                zdnSp.setText(zDtablenianbean.getAttributes().getAllCount().getSp()+"");
-                zdnGzl.setText(zDtablenianbean.getAttributes().getAllCount().getGzl()+"");
-                zdnLy.setText(zDtablenianbean.getAttributes().getAllCount().getLy()+"");
-                zdnMhk.setText(zDtablenianbean.getAttributes().getAllCount().getMhk()+"");
-                zdnBs.setText(zDtablenianbean.getAttributes().getAllCount().getBs()+"");
-                zdnSy.setText(zDtablenianbean.getAttributes().getAllCount().getSy()+"");
-                zdnBc.setText(zDtablenianbean.getAttributes().getAllCount().getBc()+"");
-                zdnYb.setText(zDtablenianbean.getAttributes().getAllCount().getYj()+"");
-                zdnCbs.setText(zDtablenianbean.getAttributes().getAllCount().getCbs()+"");
-                zdnHj.setText(zDtablenianbean.getAttributes().getAllCount().getLy()+"");
+                zDtablenianbean = JSON.parseObject(aa, ZDtablenianbean.class);
+                zdnCc.setText(zDtablenianbean.getAttributes().getAllCount().getCc() + "");
+                zdnJl.setText(zDtablenianbean.getAttributes().getAllCount().getJl() + "");
+                zdnSp.setText(zDtablenianbean.getAttributes().getAllCount().getSp() + "");
+                zdnGzl.setText(zDtablenianbean.getAttributes().getAllCount().getGzl() + "");
+                zdnLy.setText(zDtablenianbean.getAttributes().getAllCount().getLy() + "");
+                zdnMhk.setText(zDtablenianbean.getAttributes().getAllCount().getMhk() + "");
+                zdnBs.setText(zDtablenianbean.getAttributes().getAllCount().getBs() + "");
+                zdnSy.setText(zDtablenianbean.getAttributes().getAllCount().getSy() + "");
+                zdnBc.setText(zDtablenianbean.getAttributes().getAllCount().getBc() + "");
+                zdnYb.setText(zDtablenianbean.getAttributes().getAllCount().getYj() + "");
+                zdnCbs.setText(zDtablenianbean.getAttributes().getAllCount().getCbs() + "");
+                zdnTh.setText(zDtablenianbean.getAttributes().getAllCount().getTh() + "");
+
                 mSwipeRefreshLayout.setRefreshing(false);
 
             }

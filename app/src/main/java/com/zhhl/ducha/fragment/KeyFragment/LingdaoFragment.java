@@ -1,5 +1,6 @@
 package com.zhhl.ducha.fragment.KeyFragment;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -60,9 +61,9 @@ public class LingdaoFragment extends Fragment implements PullLoadMoreRecyclerVie
     private ArrayAdapter<String> arr_adapter_quyu;
     private RecyclerView mRecyclerView;
     private Keypersonadpter one_case_adapter;
-    private int mCount = 1;
     private Homebean homebean;
     private List<Homebean.AttributesBean.VarListBean> varListBeans = new ArrayList<>();
+    ProgressDialog progressDialog;
 
     @Nullable
     @Override
@@ -124,7 +125,7 @@ public class LingdaoFragment extends Fragment implements PullLoadMoreRecyclerVie
         //设置是否可以上拉刷新
         oneListview.setPushRefreshEnable(false);
         //显示下拉刷新
-        oneListview.setRefreshing(true);
+        oneListview.setRefreshing(false);
         //设置上拉刷新文字
         oneListview.setFooterViewText("loading");
         //设置上拉刷新文字颜色
@@ -135,13 +136,17 @@ public class LingdaoFragment extends Fragment implements PullLoadMoreRecyclerVie
         oneListview.setOnPullLoadMoreListener(this);
         one_case_adapter = new Keypersonadpter(getActivity());
         oneListview.setAdapter(one_case_adapter);
+        if (progressDialog == null)
+            progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("正在请求，请稍后...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         getdata();
     }
 
     private void getdata() {
         ed_name = editName.getText().toString().trim();
         ed_idcrad = editIdcard.getText().toString().trim();
-
         //网络请求
         RequestParams params = new RequestParams();
         params.put("sfzh", ed_idcrad);
@@ -151,6 +156,7 @@ public class LingdaoFragment extends Fragment implements PullLoadMoreRecyclerVie
         RequestCenter.request_Qishi1(params, new DisposeDataListener() {
             @Override
             public void onSuccess(Object o) {
+                progressDialog.dismiss();
                 Log.e("领导交办返回数据", o.toString());
                 final String aa = o.toString();
                 oneListview.setRefreshing(false);
@@ -163,6 +169,7 @@ public class LingdaoFragment extends Fragment implements PullLoadMoreRecyclerVie
 
             @Override
             public void onFailure(OkHttpException e) {
+                progressDialog.dismiss();
                 Log.e("失败", e.getEmsg() + "");
             }
 
@@ -181,12 +188,10 @@ public class LingdaoFragment extends Fragment implements PullLoadMoreRecyclerVie
     @Override
     public void onLoadMore() {
         Log.e("wxl", "onLoadMore");
-        mCount = mCount + 1;
     }
 
     private void setRefresh() {
         one_case_adapter.clearData();
-        mCount = 1;
     }
 
     @Override
@@ -196,10 +201,8 @@ public class LingdaoFragment extends Fragment implements PullLoadMoreRecyclerVie
     }
 
     @OnClick(R.id.lingdao_btn)
-    public void onViewClicked(View view)
-    {
-        switch (view.getId())
-        {
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
             case R.id.lingdao_btn:
                 initList();
                 break;

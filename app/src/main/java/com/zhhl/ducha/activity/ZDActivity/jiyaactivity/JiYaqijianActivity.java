@@ -1,7 +1,6 @@
 package com.zhhl.ducha.activity.ZDActivity.jiyaactivity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -9,16 +8,20 @@ import android.view.WindowManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import com.zhhl.ducha.R;
 import com.zhhl.ducha.activity.BaseActivity;
 import com.zhhl.ducha.fragment.JiYaqijianFragment.DeadFragment;
+import com.zhhl.ducha.fragment.JiYaqijianFragment.JiYaqijianFragment;
 import com.zhhl.ducha.fragment.JiYaqijianFragment.NetescapeFragment;
+
 import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -26,8 +29,7 @@ import butterknife.OnClick;
 /**
  * Created by qgl on 2019/9/17 15:29.
  */
-public class JiYaqijianActivity extends BaseActivity
-{
+public class JiYaqijianActivity extends BaseActivity {
     @BindView(R.id.keyper_rab1)
     RadioButton keyperRab1;
     @BindView(R.id.keyper_rab2)
@@ -38,10 +40,13 @@ public class JiYaqijianActivity extends BaseActivity
     ViewPager viewPager;
     @BindView(R.id.key_group)
     RadioGroup keyGroup;
+    @BindView(R.id.keyper_rab3)
+    RadioButton keyperRab3;
     private String code;
     private FragmentManager fm;
     private ArrayList<Object> items = new ArrayList<Object>();
     private ViewPagerAdapter adapter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +55,7 @@ public class JiYaqijianActivity extends BaseActivity
         fm = this.getSupportFragmentManager();
         items.add(new DeadFragment());
         items.add(new NetescapeFragment());
+        items.add(new JiYaqijianFragment());
         adapter = new ViewPagerAdapter(fm, items);
         viewPager.setAdapter(adapter);
         viewPager.setCurrentItem(0, false);
@@ -79,6 +85,9 @@ public class JiYaqijianActivity extends BaseActivity
                     case R.id.keyper_rab2:
                         viewPager.setCurrentItem(1);
                         break;
+                    case R.id.keyper_rab3:
+                        viewPager.setCurrentItem(2);
+                        break;
                 }
             }
         });
@@ -93,9 +102,9 @@ public class JiYaqijianActivity extends BaseActivity
                     case 1:
                         keyperRab2.setChecked(true);
                         break;
-//                    case 2:
-//                        keyperRab3.setChecked(true);
-//                        break;
+                    case 2:
+                        keyperRab3.setChecked(true);
+                        break;
 
                 }
             }
@@ -135,6 +144,8 @@ public class JiYaqijianActivity extends BaseActivity
                 case 0:
                     return (Fragment) items.get(position);
                 case 1:
+                    return (Fragment) items.get(position);
+                case 2:
                     return (Fragment) items.get(position);
             }
             return (Fragment) items.get(position);

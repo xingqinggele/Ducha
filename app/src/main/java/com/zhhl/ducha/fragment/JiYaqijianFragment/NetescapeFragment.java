@@ -1,5 +1,6 @@
 package com.zhhl.ducha.fragment.JiYaqijianFragment;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -64,6 +65,8 @@ public class NetescapeFragment extends Fragment implements PullLoadMoreRecyclerV
     private int mCount = 1;
     private JYzaitaobean homebean;
     private List<JYzaitaobean.AttributesBean.VarListBean> varListBeans = new ArrayList<>();
+    ProgressDialog progressDialog;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -124,7 +127,7 @@ public class NetescapeFragment extends Fragment implements PullLoadMoreRecyclerV
         //设置是否可以上拉刷新
         oneListview.setPushRefreshEnable(false);
         //显示下拉刷新
-        oneListview.setRefreshing(true);
+        oneListview.setRefreshing(false);
         //设置上拉刷新文字
         oneListview.setFooterViewText("loading");
         //设置上拉刷新文字颜色
@@ -135,6 +138,11 @@ public class NetescapeFragment extends Fragment implements PullLoadMoreRecyclerV
         oneListview.setOnPullLoadMoreListener(this);
         one_case_adapter = new JYzaitaoadpter(getActivity());
         oneListview.setAdapter(one_case_adapter);
+        if (progressDialog == null)
+            progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("正在请求，请稍后...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         getdata();
     }
 
@@ -151,6 +159,7 @@ public class NetescapeFragment extends Fragment implements PullLoadMoreRecyclerV
             @Override
             public void onSuccess(Object o)
             {
+                progressDialog.dismiss();
                 Log.e("被列为网逃后仍有见面稳控考察记录返回数据", o.toString());
                 final String aa = o.toString();
                 oneListview.setRefreshing(false);
@@ -164,6 +173,7 @@ public class NetescapeFragment extends Fragment implements PullLoadMoreRecyclerV
             @Override
             public void onFailure(OkHttpException e)
             {
+                progressDialog.dismiss();
                 Log.e("失败", e.getEmsg() + "");
             }
 

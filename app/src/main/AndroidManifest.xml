@@ -49,9 +49,25 @@
         <!--羁押在逃人员详情-->
         <activity android:name=".activity.ZDActivity.jiyaactivity.JYZaitaoActivityDeteils"/>
         <!--重点关注人员失控离开本地-->
-        <activity android:name=".activity.ZDActivity.ZDShiKongActivity"/>
+        <activity android:name=".activity.ZDActivity.ZhongDianactivity.ZDShiKongActivity"/>
         <!--未按照规定录入稳控考察记录-->
-        <activity android:name=".activity.ZDActivity.WALuruActivity"/>
+        <!--稳控考察记录过于简单或雷同-->
+        <activity android:name=".activity.ZDActivity.WenKongkaochaActivity.WenKongkaochaActivity"/>
+        <!--稳控工作记录少于10字详情-->
+        <activity android:name=".activity.ZDActivity.WenKongkaochaActivity.WenKongDeteilsActivity1"/>
+        <!--稳控考察记录雷同超过3次详情页-->
+        <activity android:name=".activity.ZDActivity.WenKongkaochaActivity.WenKongDeteilsActivity2"/>
+        <!--羁押拘留期间仍有见面稳控考察记录-->
+        <!--重点人信息录入不全-->
+        <activity android:name=".activity.ZDActivity.jiyaactivity.JYJuliuActivityDeteils"/>
+        <!--重点人信息录入不全详情-->
+        <activity android:name=".activity.ZDActivity.ZhongDianactivity.ZhongDianDeteilsActivity"/>
+        <!--领导交办重点人统计-->
+        <activity android:name=".activity.TableActivity.LTableActivity1"/>
+        <!--重点人异地居住一年以上统计-->
+        <activity android:name=".activity.TableActivity.LTableActivity2"/>
+        <!--死亡未撤管重点人统计-->
+        <activity android:name=".activity.TableActivity.SWTableActivity"/>
     </application>
 
 </manifest>

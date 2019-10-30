@@ -1,10 +1,12 @@
 package com.zhhl.ducha.activity.ZDActivity.cheguanactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -13,6 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.zhhl.ducha.R;
 import com.zhhl.ducha.activity.BaseActivity;
+import com.zhhl.ducha.activity.TableActivity.SWTableActivity;
 import com.zhhl.ducha.fragment.CheguanFragment.SWweicheguanFragment;
 
 import java.util.ArrayList;
@@ -36,6 +39,8 @@ public class YingdangcheguanActivity extends BaseActivity {
     private FragmentManager fm;
     private ArrayList<Object> items = new ArrayList<Object>();
     private ViewPagerAdapter adapter;
+    @BindView(R.id.tv_table)
+    TextView tv_table;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,11 +56,15 @@ public class YingdangcheguanActivity extends BaseActivity {
         initEvent();
     }
 
-    @OnClick(R.id.back)
+    @OnClick({R.id.back,R.id.tv_table})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.back:
                 finish();
+                break;
+            case R.id.tv_table:
+                Intent intent = new Intent(YingdangcheguanActivity.this, SWTableActivity.class);
+                startActivity(intent);
                 break;
         }
     }

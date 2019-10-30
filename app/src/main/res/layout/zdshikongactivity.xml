@@ -26,7 +26,7 @@
             android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="重点关注人员失控离开本地"
+            android:text="重点人信息录入不全"
             android:textColor="#ffffffff"
             android:textSize="20sp"
             />
@@ -52,7 +52,7 @@
             android:layout_marginRight="160dp"
             android:layout_weight="1"
             android:button="@null"
-            android:text="失控离开本地重点人"
+            android:text="重点人信息录入不全"
             android:layout_width="0dp"
             android:layout_height="match_parent" />
 

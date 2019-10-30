@@ -13,10 +13,10 @@ import androidx.fragment.app.Fragment;
 
 import com.zhhl.ducha.R;
 import com.zhhl.ducha.activity.ZDActivity.jiyaactivity.JiYaqijianActivity;
-import com.zhhl.ducha.activity.ZDActivity.WALuruActivity;
+import com.zhhl.ducha.activity.ZDActivity.WenKongkaochaActivity.WenKongkaochaActivity;
 import com.zhhl.ducha.activity.ZDActivity.cheguanactivity.YingdangcheguanActivity;
 import com.zhhl.ducha.activity.ZDActivity.lieguanactivity.YingdanglieguanlActivity;
-import com.zhhl.ducha.activity.ZDActivity.ZDShiKongActivity;
+import com.zhhl.ducha.activity.ZDActivity.ZhongDianactivity.ZDShiKongActivity;
 
 /**
  * Created by qgl on 2019/9/9 16:42.
@@ -64,7 +64,7 @@ public class ZDFragment extends Fragment implements View.OnClickListener
                 startActivity(intent4);
                 break;
             case R.id.zdf_r5:
-                Intent intent5 = new Intent(getActivity(), WALuruActivity.class);
+                Intent intent5 = new Intent(getActivity(), WenKongkaochaActivity.class);
                 startActivity(intent5);
                 break;
         }

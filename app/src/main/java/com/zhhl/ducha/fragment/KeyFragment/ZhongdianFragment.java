@@ -1,5 +1,6 @@
 package com.zhhl.ducha.fragment.KeyFragment;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -63,6 +64,7 @@ public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerV
     private Unbinder unbinder;
     private ZDyinianbean zDyinianbean;
     private List<ZDyinianbean.AttributesBean.VarListBean>zdvarlist;
+    ProgressDialog progressDialog;
 
 
     @Nullable
@@ -125,7 +127,7 @@ public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerV
         //设置是否可以上拉刷新
         twoListview.setPushRefreshEnable(false);
         //显示下拉刷新
-        twoListview.setRefreshing(true);
+        twoListview.setRefreshing(false);
         //设置上拉刷新文字
         twoListview.setFooterViewText("loading");
         //设置上拉刷新文字颜色
@@ -136,6 +138,11 @@ public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerV
         twoListview.setOnPullLoadMoreListener(this);
         one_case_adapter = new Zdyinianadpter(getActivity());
         twoListview.setAdapter(one_case_adapter);
+        if (progressDialog == null)
+            progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("正在请求，请稍后...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         getdata();
     }
 
@@ -154,6 +161,7 @@ public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerV
         RequestCenter.request_Qishi2(params, new DisposeDataListener() {
             @Override
             public void onSuccess(Object o) {
+                progressDialog.dismiss();
                 Log.e("重点人异地居住返回数据2", o.toString());
                 final String aa = o.toString();
                 twoListview.setRefreshing(false);
@@ -167,6 +175,8 @@ public class ZhongdianFragment extends Fragment implements PullLoadMoreRecyclerV
 
             @Override
             public void onFailure(OkHttpException e) {
+                progressDialog.dismiss();
+
                 Log.e("失败", e.getEmsg() + "");
             }
 

@@ -122,9 +122,10 @@
             android:src="@mipmap/home_icon3"
             />
     </RelativeLayout>
+    <!--重点关注人员失控离开本地修改了-->
+    <!--重点人信息录入不全-->
     <RelativeLayout
         android:id="@+id/zdf_r4"
-
         android:layout_marginTop="22dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -148,7 +149,7 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="重点关注人员失控离开本地"
+            android:text="重点人信息录入不全"
             android:textColor="#ff1f1f1f"
             android:textSize="17sp"
             />
@@ -162,6 +163,7 @@
             android:src="@mipmap/home_icon3"
             />
     </RelativeLayout>
+    <!--未按照规定录入稳控考察记录 这个说不用了替换了-->
     <RelativeLayout
         android:id="@+id/zdf_r5"
         android:layout_marginTop="22dp"
@@ -187,7 +189,7 @@
             android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="未按照规定录入稳控考察记录"
+            android:text="稳控考察记录过于简单或雷同"
             android:textColor="#ff1f1f1f"
             android:textSize="17sp"
             />

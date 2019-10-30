@@ -1,5 +1,6 @@
 package com.zhhl.ducha.fragment.CheguanFragment;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -60,9 +61,9 @@ public class SWweicheguanFragment extends Fragment  implements PullLoadMoreRecyc
     private ArrayAdapter<String> arr_adapter_quyu;
     private RecyclerView mRecyclerView;
     private SWweicheguanadpter one_case_adapter;
-    private int mCount = 1;
     private SWweicheguanbean homebean;
     private List<SWweicheguanbean.AttributesBean.VarListBean> varListBeans = new ArrayList<>();
+    ProgressDialog progressDialog;
 
     @Nullable
     @Override
@@ -123,9 +124,9 @@ public class SWweicheguanFragment extends Fragment  implements PullLoadMoreRecyc
         //设置是否可以上拉刷新
         oneListview.setPushRefreshEnable(false);
         //显示下拉刷新
-        oneListview.setRefreshing(true);
+        oneListview.setRefreshing(false);
         //设置上拉刷新文字
-        oneListview.setFooterViewText("loading");
+//        oneListview.setFooterViewText("loading");
         //设置上拉刷新文字颜色
         //mPullLoadMoreRecyclerView.setFooterViewTextColor(R.color.white);
         //设置加载更多背景色
@@ -134,6 +135,11 @@ public class SWweicheguanFragment extends Fragment  implements PullLoadMoreRecyc
         oneListview.setOnPullLoadMoreListener(this);
         one_case_adapter = new SWweicheguanadpter(getActivity());
         oneListview.setAdapter(one_case_adapter);
+        if (progressDialog == null)
+            progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setMessage("正在请求，请稍后...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
         getdata();
     }
 
@@ -151,6 +157,7 @@ public class SWweicheguanFragment extends Fragment  implements PullLoadMoreRecyc
             @Override
             public void onSuccess(Object o)
             {
+                progressDialog.dismiss();
                 Log.e("死亡未撤管返回数据", o.toString());
                 final String aa = o.toString();
                 oneListview.setRefreshing(false);
@@ -165,6 +172,7 @@ public class SWweicheguanFragment extends Fragment  implements PullLoadMoreRecyc
             @Override
             public void onFailure(OkHttpException e)
             {
+                progressDialog.dismiss();
                 Log.e("失败", e.getEmsg() + "");
             }
 
@@ -174,24 +182,21 @@ public class SWweicheguanFragment extends Fragment  implements PullLoadMoreRecyc
     }
 
 
-
-
     @Override
     public void onRefresh() {
         Log.e("wxl", "onRefresh");
-        setRefresh();
+            setRefresh();
         getdata();
     }
 
     @Override
     public void onLoadMore() {
         Log.e("wxl", "onLoadMore");
-        mCount = mCount + 1;
+
     }
 
     private void setRefresh() {
         one_case_adapter.clearData();
-        mCount = 1;
     }
 
     @Override

@@ -231,7 +231,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:textColor="#ff1f1f1f"
-                            android:textSize="10sp" />
+                            android:textSize="13sp" />
 
                         <View
                             android:layout_width="0.5dp"
@@ -966,6 +966,76 @@
 
                         <TextView
                             android:id="@+id/zdn_cbs"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#ff1f1f1f"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="#D1D1D1" />
+                    <!--通化-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="通化"
+                            android:textColor="#ff1f1f1f"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="#D1D1D1" />
+
+                        <TextView
+                            android:id="@+id/zdy_th"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="#ff1f1f1f"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="#D1D1D1" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="通化"
+                            android:textColor="#ff1f1f1f"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="#D1D1D1" />
+
+                        <TextView
+                            android:id="@+id/zdn_th"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="10dp"

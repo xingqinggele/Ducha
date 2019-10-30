@@ -74,7 +74,7 @@ public class ZDyinianActivityDetalis extends BaseActivity implements SwipeRefres
     private ListView mListView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private ZDyiniandetailsbean zDyiniandetailsbean;
-    private List<ZDyiniandetailsbean.AttributesBean.ZdrListBean>zdrListBeans;
+    private List<ZDyiniandetailsbean.AttributesBean.ZdrListBean> zdrListBeans;
     ProgressDialog progressDialog;
 
     @Override
@@ -88,8 +88,7 @@ public class ZDyinianActivityDetalis extends BaseActivity implements SwipeRefres
     }
 
 
-    public void initView()
-    {
+    public void initView() {
         mListView = findViewById(R.id.listview);
         mSwipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         mSwipeRefreshLayout.setOnRefreshListener(this);
@@ -100,8 +99,6 @@ public class ZDyinianActivityDetalis extends BaseActivity implements SwipeRefres
         progressDialog.setCancelable(false);
         progressDialog.show();
         getdata();
-
-
     }
 
     private void getdata() {
@@ -118,8 +115,7 @@ public class ZDyinianActivityDetalis extends BaseActivity implements SwipeRefres
                 final String aa = o.toString();
                 zDyiniandetailsbean = JSON.parseObject(aa, ZDyiniandetailsbean.class);
                 zdrListBeans = zDyiniandetailsbean.getAttributes().getZdrList();
-                if (zdrListBeans.size()>=1)
-                {
+                if (zdrListBeans.size() >= 1) {
                     detalisName.setText(zdrListBeans.get(0).getXM());
                     detalisPname.setText(zdrListBeans.get(0).getXMPY());
                     detalisNation.setText(zdrListBeans.get(0).getMZMC());

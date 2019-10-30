@@ -75,7 +75,6 @@ public class LingdaoActivityDetalis extends BaseActivity implements SwipeRefresh
     private List<Homedetalisbean.AttributesBean.ListDataBean> extraData;
     private ListView mListView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
-
     ProgressDialog progressDialog;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

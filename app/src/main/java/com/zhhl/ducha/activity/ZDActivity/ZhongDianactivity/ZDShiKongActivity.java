@@ -1,4 +1,4 @@
-package com.zhhl.ducha.activity.ZDActivity;
+package com.zhhl.ducha.activity.ZDActivity.ZhongDianactivity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -70,14 +70,8 @@ public class ZDShiKongActivity extends BaseActivity
                 switch (checkedId) {
                     case R.id.keyper_rab1:
                         viewPager.setCurrentItem(0);// 选择某一页
+                        break;
 
-                        break;
-                    case R.id.keyper_rab2:
-                        viewPager.setCurrentItem(1);
-                        break;
-//                    case R.id.keyper_rab3:
-//                        viewPager.setCurrentItem(2);// 选择某一页
-//                        break;
 
 
                 }
@@ -91,12 +85,7 @@ public class ZDShiKongActivity extends BaseActivity
                     case 0:
                         keyperRab1.setChecked(true);
                         break;
-//                    case 1:
-//                        keyperRab2.setChecked(true);
-//                        break;
-//                    case 2:
-//                        keyperRab3.setChecked(true);
-//                        break;
+
 
                 }
             }
